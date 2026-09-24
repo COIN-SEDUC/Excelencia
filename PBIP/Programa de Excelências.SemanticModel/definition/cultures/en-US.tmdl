@@ -1047,7 +1047,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Diverg. Matrícula": {
+			          "Censo Escolar: Diverg. Matrícula": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1073,7 +1073,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Diverg. Rendimento": {
+			          "Censo Escolar: Diverg. Rendimento": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1099,7 +1099,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Cadastro Escola": {
+			          "Censo Escolar: Cad. Escola": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1125,7 +1125,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "Cadastro Aluno": {
+			          "Censo Escolar: Cad. Aluno": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -6210,9 +6210,510 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "excelencia.qtd_turmas_coleta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "excelencias",
+			          "ConceptualProperty": "QTD_TURMAS_COLETA"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "qtd turmas coleta": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "qtd turma coleta": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "QTD_TURMAS_COLETA": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "excelencia.saldo_ampliar": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "excelencias",
+			          "ConceptualProperty": "SALDO_AMPLIAR"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "saldo ampliar": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "SALDO_AMPLIAR": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "excelencia.saldo_adequar": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "excelencias",
+			          "ConceptualProperty": "SALDO_ADEQUAR"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "saldo adequar": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "SALDO_ADEQUAR": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "excelencia.nm_escola__cd_escola": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "excelencias",
+			          "ConceptualProperty": "NM_ESCOLA + CD_ESCOLA"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nm_escola + cd_escola": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "glossario.ordem_categoria": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "glossario",
+			          "ConceptualProperty": "OrdemCategoria"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ordem categoria": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "OrdemCategoria": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "glossario.ordem_indicador": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "glossario",
+			          "ConceptualProperty": "OrdemIndicador"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ordem indicador": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "OrdemIndicador": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "glossario_has_ordem_indicador": {
+			      "Binding": {
+			        "ConceptualEntity": "glossario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "glossario": {
+			          "Target": {
+			            "Entity": "glossario"
+			          }
+			        },
+			        "glossario.ordem_indicador": {
+			          "Target": {
+			            "Entity": "glossario.ordem_indicador"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "glossario"
+			            },
+			            "Object": {
+			              "Role": "glossario.ordem_indicador"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "glossarios_have_ordem_indicadors"
+			        }
+			      ]
+			    },
+			    "glossario_has_ordem_categoria": {
+			      "Binding": {
+			        "ConceptualEntity": "glossario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "glossario": {
+			          "Target": {
+			            "Entity": "glossario"
+			          }
+			        },
+			        "glossario.ordem_categoria": {
+			          "Target": {
+			            "Entity": "glossario.ordem_categoria"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "glossario"
+			            },
+			            "Object": {
+			              "Role": "glossario.ordem_categoria"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "glossarios_have_ordem_categorias"
+			        }
+			      ]
+			    },
+			    "excelencia_has_nm_escola__cd_escola": {
+			      "Binding": {
+			        "ConceptualEntity": "excelencias"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "excelencia": {
+			          "Target": {
+			            "Entity": "excelencia"
+			          }
+			        },
+			        "excelencia.nm_escola__cd_escola": {
+			          "Target": {
+			            "Entity": "excelencia.nm_escola__cd_escola"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "excelencia"
+			            },
+			            "Object": {
+			              "Role": "excelencia.nm_escola__cd_escola"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "excelencias_have_nm_escola__cd_escolas"
+			        }
+			      ]
+			    },
+			    "excelencia_has_saldo_adequar": {
+			      "Binding": {
+			        "ConceptualEntity": "excelencias"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "excelencia": {
+			          "Target": {
+			            "Entity": "excelencia"
+			          }
+			        },
+			        "excelencia.saldo_adequar": {
+			          "Target": {
+			            "Entity": "excelencia.saldo_adequar"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "excelencia"
+			            },
+			            "Object": {
+			              "Role": "excelencia.saldo_adequar"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "excelencias_have_saldo_adequars"
+			        }
+			      ]
+			    },
+			    "excelencia_has_saldo_ampliar": {
+			      "Binding": {
+			        "ConceptualEntity": "excelencias"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "excelencia": {
+			          "Target": {
+			            "Entity": "excelencia"
+			          }
+			        },
+			        "excelencia.saldo_ampliar": {
+			          "Target": {
+			            "Entity": "excelencia.saldo_ampliar"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "excelencia"
+			            },
+			            "Object": {
+			              "Role": "excelencia.saldo_ampliar"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "excelencias_have_saldo_ampliars"
+			        }
+			      ]
+			    },
+			    "excelencia_has_qtd_turmas_coleta": {
+			      "Binding": {
+			        "ConceptualEntity": "excelencias"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "excelencia": {
+			          "Target": {
+			            "Entity": "excelencia"
+			          }
+			        },
+			        "excelencia.qtd_turmas_coleta": {
+			          "Target": {
+			            "Entity": "excelencia.qtd_turmas_coleta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "excelencia"
+			            },
+			            "Object": {
+			              "Role": "excelencia.qtd_turmas_coleta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "excelencias_have_qtd_turmas_coletas"
+			        }
+			      ]
+			    },
+			    "glossario_has_entity__measure_glossario__cor_indicador_background": {
+			      "Binding": {
+			        "ConceptualEntity": "glossario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "glossario": {
+			          "Target": {
+			            "Entity": "glossario"
+			          }
+			        },
+			        "entity__measure.glossario__cor_indicador_background": {
+			          "Target": {
+			            "Entity": "entity__measure.glossario__cor_indicador_background"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "glossario"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.glossario__cor_indicador_background"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "glossarios_have_glossario__cor_indicador_background"
+			        }
+			      ]
+			    },
+			    "parametro_metrica_has_entity__measure_tt_ordem_atual": {
+			      "Binding": {
+			        "ConceptualEntity": "parametro_metricas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "parametro_metrica": {
+			          "Target": {
+			            "Entity": "parametro_metrica"
+			          }
+			        },
+			        "entity__measure.tt_ordem_atual": {
+			          "Target": {
+			            "Entity": "entity__measure.tt_ordem_atual"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "parametro_metrica"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.tt_ordem_atual"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "parametro_metricas_have_tt_ordem_atual"
+			        }
+			      ]
+			    },
+			    "parametro_metrica_has_entity__measure_tt_cor_destaque_cartao": {
+			      "Binding": {
+			        "ConceptualEntity": "parametro_metricas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "parametro_metrica": {
+			          "Target": {
+			            "Entity": "parametro_metrica"
+			          }
+			        },
+			        "entity__measure.tt_cor_destaque_cartao": {
+			          "Target": {
+			            "Entity": "entity__measure.tt_cor_destaque_cartao"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "parametro_metrica"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.tt_cor_destaque_cartao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "parametro_metricas_have_tt_cor_destaque_cartao"
+			        }
+			      ]
+			    },
+			    "excelencia_objetivo_has_entity__measure_tt_cor_destaque_cartao": {
+			      "Binding": {
+			        "ConceptualEntity": "excelencia_objetivo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "excelencia_objetivo": {
+			          "Target": {
+			            "Entity": "excelencia_objetivo"
+			          }
+			        },
+			        "entity__measure.tt_cor_destaque_cartao": {
+			          "Target": {
+			            "Entity": "entity__measure.tt_cor_destaque_cartao"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "excelencia_objetivo"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.tt_cor_destaque_cartao"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "excelencia_objetivos_have_tt_cor_destaque_cartao"
+			        }
+			      ]
+			    },
+			    "excelencia_has_entity__measure_tt_Total_de_municipios": {
+			      "Binding": {
+			        "ConceptualEntity": "excelencias"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "excelencia": {
+			          "Target": {
+			            "Entity": "excelencia"
+			          }
+			        },
+			        "entity__measure.tt_Total_de_municipios": {
+			          "Target": {
+			            "Entity": "entity__measure.tt_Total_de_municipios"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "excelencia"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.tt_Total_de_municipios"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "excelencias_have_tt_Total_de_municipios"
+			        }
+			      ]
+			    },
 			    "excelencia_has_entity__measure_tt_Total_de_escolas": {
 			      "Binding": {
 			        "ConceptualEntity": "excelencias"
@@ -13453,15 +13954,15 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "entity__measure_has_demanda_e_coleta_qualidade_do_enturmamento": {
+			    "excelencia_has_entity__measure_demanda_e_coleta_qualidade_do_enturmamento": {
 			      "Binding": {
-			        "ConceptualEntity": "_measures"
+			        "ConceptualEntity": "excelencias"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "entity__measure": {
+			        "excelencia": {
 			          "Target": {
-			            "Entity": "entity__measure"
+			            "Entity": "excelencia"
 			          }
 			        },
 			        "entity__measure.demanda_e_coleta_qualidade_do_enturmamento": {
@@ -13474,7 +13975,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "entity__measure"
+			              "Role": "excelencia"
 			            },
 			            "Object": {
 			              "Role": "entity__measure.demanda_e_coleta_qualidade_do_enturmamento"
@@ -13482,7 +13983,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_demanda_e_coleta_qualidade_do_enturmamento"
+			          "ID": "excelencias_have_demanda_e_coleta_qualidade_do_enturmamento"
 			        }
 			      ]
 			    },
@@ -14440,171 +14941,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "excelencias_have_ds_rede_ensinos"
-			        }
-			      ]
-			    },
-			    "excelencia_has_entity__measure_tt_Total_de_municipios": {
-			      "Binding": {
-			        "ConceptualEntity": "excelencias"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "excelencia": {
-			          "Target": {
-			            "Entity": "excelencia"
-			          }
-			        },
-			        "entity__measure.tt_Total_de_municipios": {
-			          "Target": {
-			            "Entity": "entity__measure.tt_Total_de_municipios"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "excelencia"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.tt_Total_de_municipios"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "excelencias_have_tt_Total_de_municipios"
-			        }
-			      ]
-			    },
-			    "excelencia_objetivo_has_entity__measure_tt_cor_destaque_cartao": {
-			      "Binding": {
-			        "ConceptualEntity": "excelencia_objetivo"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "excelencia_objetivo": {
-			          "Target": {
-			            "Entity": "excelencia_objetivo"
-			          }
-			        },
-			        "entity__measure.tt_cor_destaque_cartao": {
-			          "Target": {
-			            "Entity": "entity__measure.tt_cor_destaque_cartao"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "excelencia_objetivo"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.tt_cor_destaque_cartao"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "excelencia_objetivos_have_tt_cor_destaque_cartao"
-			        }
-			      ]
-			    },
-			    "parametro_metrica_has_entity__measure_tt_cor_destaque_cartao": {
-			      "Binding": {
-			        "ConceptualEntity": "parametro_metricas"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "parametro_metrica": {
-			          "Target": {
-			            "Entity": "parametro_metrica"
-			          }
-			        },
-			        "entity__measure.tt_cor_destaque_cartao": {
-			          "Target": {
-			            "Entity": "entity__measure.tt_cor_destaque_cartao"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "parametro_metrica"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.tt_cor_destaque_cartao"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "parametro_metricas_have_tt_cor_destaque_cartao"
-			        }
-			      ]
-			    },
-			    "parametro_metrica_has_entity__measure_tt_ordem_atual": {
-			      "Binding": {
-			        "ConceptualEntity": "parametro_metricas"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "parametro_metrica": {
-			          "Target": {
-			            "Entity": "parametro_metrica"
-			          }
-			        },
-			        "entity__measure.tt_ordem_atual": {
-			          "Target": {
-			            "Entity": "entity__measure.tt_ordem_atual"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "parametro_metrica"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.tt_ordem_atual"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "parametro_metricas_have_tt_ordem_atual"
-			        }
-			      ]
-			    },
-			    "glossario_has_entity__measure_glossario__cor_indicador_background": {
-			      "Binding": {
-			        "ConceptualEntity": "glossario"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "glossario": {
-			          "Target": {
-			            "Entity": "glossario"
-			          }
-			        },
-			        "entity__measure.glossario__cor_indicador_background": {
-			          "Target": {
-			            "Entity": "entity__measure.glossario__cor_indicador_background"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "glossario"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.glossario__cor_indicador_background"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "glossarios_have_glossario__cor_indicador_background"
 			        }
 			      ]
 			    },

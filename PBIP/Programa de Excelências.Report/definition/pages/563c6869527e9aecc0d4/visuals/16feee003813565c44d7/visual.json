@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "16feee003813565c44d7",
   "position": {
     "x": 14.945669291338582,
@@ -197,8 +197,8 @@
                 }
               },
               "queryRef": "_measures.Censo Escolar: % de divergências na matrícula",
-              "nativeQueryRef": "Diverg. Matrícula",
-              "displayName": "Diverg. Matrícula"
+              "nativeQueryRef": "Censo Escolar: Diverg. Matrícula",
+              "displayName": "Censo Escolar: Diverg. Matrícula"
             },
             {
               "field": {
@@ -212,8 +212,8 @@
                 }
               },
               "queryRef": "_measures.Censo Escolar: % de divergência na taxa de aprovação",
-              "nativeQueryRef": "Diverg. Rendimento",
-              "displayName": "Diverg. Rendimento"
+              "nativeQueryRef": "Censo Escolar: Diverg. Rendimento",
+              "displayName": "Censo Escolar: Diverg. Rendimento"
             },
             {
               "field": {
@@ -227,8 +227,8 @@
                 }
               },
               "queryRef": "_measures.Cadastro de Escolas: % de cadastros inválidos",
-              "nativeQueryRef": "Cadastro Escola",
-              "displayName": "Cadastro Escola"
+              "nativeQueryRef": "Censo Escolar: Cad. Escola",
+              "displayName": "Censo Escolar: Cad. Escola"
             },
             {
               "field": {
@@ -242,8 +242,8 @@
                 }
               },
               "queryRef": "_measures.Cadastro de Alunos: % de cadastros inválidos",
-              "nativeQueryRef": "Cadastro Aluno",
-              "displayName": "Cadastro Aluno"
+              "nativeQueryRef": "Censo Escolar: Cad. Aluno",
+              "displayName": "Censo Escolar: Cad. Aluno"
             }
           ]
         }
@@ -1867,7 +1867,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "434.6972834057666D"
+                  "Value": "300.6861132876113D"
                 }
               }
             }
@@ -1895,7 +1895,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "134.76307922619827D"
+                  "Value": "122.07312622377027D"
                 }
               }
             }
@@ -1965,7 +1965,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "115.66797178912785D"
+                  "Value": "178.71911329660395D"
                 }
               }
             }
@@ -1979,7 +1979,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "137.5406294465031D"
+                  "Value": "208.35477678657134D"
                 }
               }
             }
@@ -1993,7 +1993,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "111.85826329749455D"
+                  "Value": "149.93910510352424D"
                 }
               }
             }
@@ -2007,7 +2007,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "109.85823786711103D"
+                  "Value": "144.34172169024012D"
                 }
               }
             }

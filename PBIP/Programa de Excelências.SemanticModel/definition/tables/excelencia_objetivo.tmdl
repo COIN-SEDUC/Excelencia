@@ -45,7 +45,7 @@ table excelencia_objetivo
 
 	column alunos_noturnos
 		dataType: double
-		formatString: 0.00%;-0.00%;0.00%
+		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 2c336dc2-f1c8-474d-9926-cb5963b96d04
 		summarizeBy: none
 		sourceColumn: alunos_noturnos
@@ -56,7 +56,7 @@ table excelencia_objetivo
 
 	column alunos_pei
 		dataType: double
-		formatString: 0.00%;-0.00%;0.00%
+		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: a6b3e0ed-a60a-48fc-836e-959745f1a5ac
 		summarizeBy: none
 		sourceColumn: alunos_pei
@@ -78,7 +78,7 @@ table excelencia_objetivo
 
 	column alunos_pendentes
 		dataType: double
-		formatString: 0.00%;-0.00%;0.00%
+		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: bf344195-e696-43ff-9049-95064f544fd1
 		summarizeBy: none
 		sourceColumn: alunos_pendentes
@@ -89,7 +89,7 @@ table excelencia_objetivo
 
 	column qualidade_entur
 		dataType: double
-		formatString: 0.00%;-0.00%;0.00%
+		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: fa2b9cbf-ac01-4344-b5df-5b3620c5d788
 		summarizeBy: none
 		sourceColumn: qualidade_entur
@@ -100,7 +100,7 @@ table excelencia_objetivo
 
 	column rendimento
 		dataType: double
-		formatString: 0.00%;-0.00%;0.00%
+		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 99a2b022-b1c9-4c54-be96-9b08b41fa9a0
 		summarizeBy: none
 		sourceColumn: rendimento
@@ -111,7 +111,7 @@ table excelencia_objetivo
 
 	column fechamento
 		dataType: double
-		formatString: 0.00%;-0.00%;0.00%
+		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: e152d74e-6722-4c88-990d-718965a2d6b3
 		summarizeBy: none
 		sourceColumn: fechamento
@@ -122,7 +122,7 @@ table excelencia_objetivo
 
 	column bolsa_percent_nao_informado
 		dataType: double
-		formatString: 0.00%;-0.00%;0.00%
+		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: beb7b32d-ee6c-41f6-9b77-c1c82edcf81b
 		summarizeBy: none
 		sourceColumn: bolsa_percent_nao_informado
@@ -133,7 +133,7 @@ table excelencia_objetivo
 
 	column diverg_matricula
 		dataType: double
-		formatString: 0.00%;-0.00%;0.00%
+		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: c61ac6d4-d2e0-477b-8c6a-7dc3ef456921
 		summarizeBy: none
 		sourceColumn: diverg_matricula
@@ -144,7 +144,7 @@ table excelencia_objetivo
 
 	column diverg_rendimento
 		dataType: double
-		formatString: 0.00%;-0.00%;0.00%
+		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 11c94d3d-94e7-446a-9647-e08586e3e7f0
 		summarizeBy: none
 		sourceColumn: diverg_rendimento
@@ -155,7 +155,7 @@ table excelencia_objetivo
 
 	column cadastro_escola
 		dataType: double
-		formatString: 0.00%;-0.00%;0.00%
+		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 47a268d7-28ed-4c2a-85b0-26202cc955e7
 		summarizeBy: none
 		sourceColumn: cadastro_escola
@@ -166,7 +166,7 @@ table excelencia_objetivo
 
 	column cadastro_aluno
 		dataType: double
-		formatString: 0.00%;-0.00%;0.00%
+		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: f5adbf33-6ae4-4d7e-adc9-96d44ec4bb44
 		summarizeBy: none
 		sourceColumn: cadastro_aluno
