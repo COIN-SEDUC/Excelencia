@@ -1,0 +1,2274 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "1fe9662e06adacd3a860",
+  "position": {
+    "x": 14.333009708737864,
+    "y": 139,
+    "z": 3000,
+    "height": 907,
+    "width": 2082,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "excelencia_objetivo"
+                    }
+                  },
+                  "Property": "diretoria"
+                }
+              },
+              "queryRef": "excelencia_objetivo.diretoria",
+              "nativeQueryRef": "Unidade Regional de Ensino",
+              "displayName": "Unidade Regional de Ensino"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "excelencia_objetivo"
+                    }
+                  },
+                  "Property": "escolas"
+                }
+              },
+              "queryRef": "Sum(excelencia_objetivo.escolas)",
+              "nativeQueryRef": "Escolas",
+              "displayName": "Escolas"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "excelencia_objetivo"
+                    }
+                  },
+                  "Property": "alunos_noturnos"
+                }
+              },
+              "queryRef": "Sum(excelencia_objetivo.alunos_noturnos)",
+              "nativeQueryRef": "Alunos Noturnos",
+              "displayName": "Alunos Noturnos"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "excelencia_objetivo"
+                    }
+                  },
+                  "Property": "alunos_pei"
+                }
+              },
+              "queryRef": "Sum(excelencia_objetivo.alunos_pei)",
+              "nativeQueryRef": "Alunos PEI",
+              "displayName": "Alunos PEI"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "excelencia_objetivo"
+                    }
+                  },
+                  "Property": "salas_aula"
+                }
+              },
+              "queryRef": "Sum(excelencia_objetivo.salas_aula)",
+              "nativeQueryRef": "# Salas de Aula",
+              "displayName": "# Salas de Aula"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "excelencia_objetivo"
+                    }
+                  },
+                  "Property": "alunos_pendentes"
+                }
+              },
+              "queryRef": "Sum(excelencia_objetivo.alunos_pendentes)",
+              "nativeQueryRef": "Alunos Pendentes",
+              "displayName": "Alunos Pendentes"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "excelencia_objetivo"
+                    }
+                  },
+                  "Property": "qualidade_entur"
+                }
+              },
+              "queryRef": "Sum(excelencia_objetivo.qualidade_entur)",
+              "nativeQueryRef": "Qualidade Enturm.",
+              "displayName": "Qualidade Enturm."
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "excelencia_objetivo"
+                    }
+                  },
+                  "Property": "rendimento"
+                }
+              },
+              "queryRef": "Sum(excelencia_objetivo.rendimento)",
+              "nativeQueryRef": "Rendimento",
+              "displayName": "Rendimento"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "excelencia_objetivo"
+                    }
+                  },
+                  "Property": "fechamento"
+                }
+              },
+              "queryRef": "Sum(excelencia_objetivo.fechamento)",
+              "nativeQueryRef": "Fechamento",
+              "displayName": "Fechamento"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "excelencia_objetivo"
+                    }
+                  },
+                  "Property": "bolsa_percent_nao_informado"
+                }
+              },
+              "queryRef": "Sum(excelencia_objetivo.bolsa_percent_nao_informado)",
+              "nativeQueryRef": "Bolsa Família: % não info.",
+              "displayName": "Bolsa Família: % não info."
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "excelencia_objetivo"
+                    }
+                  },
+                  "Property": "diverg_matricula"
+                }
+              },
+              "queryRef": "Sum(excelencia_objetivo.diverg_matricula)",
+              "nativeQueryRef": "Diverg. Matrícula",
+              "displayName": "Diverg. Matrícula"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "excelencia_objetivo"
+                    }
+                  },
+                  "Property": "diverg_rendimento"
+                }
+              },
+              "queryRef": "Sum(excelencia_objetivo.diverg_rendimento)",
+              "nativeQueryRef": "Diverg. Rendimento",
+              "displayName": "Diverg. Rendimento"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "excelencia_objetivo"
+                    }
+                  },
+                  "Property": "cadastro_escola"
+                }
+              },
+              "queryRef": "Sum(excelencia_objetivo.cadastro_escola)",
+              "nativeQueryRef": "Cadastro Escola",
+              "displayName": "Cadastro Escola"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "excelencia_objetivo"
+                    }
+                  },
+                  "Property": "cadastro_aluno"
+                }
+              },
+              "queryRef": "Sum(excelencia_objetivo.cadastro_aluno)",
+              "nativeQueryRef": "Cadastro Aluno",
+              "displayName": "Cadastro Aluno"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "excelencia_objetivo"
+                  }
+                },
+                "Property": "diretoria"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "fontColorPrimary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "urlIcon": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_measures"
+                        }
+                      },
+                      "Property": "Cor Alunos Noturnos (fonts)"
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_measures"
+                        }
+                      },
+                      "Property": "Cor Alunos Noturnos (background)"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "_measures.Qtd. de alunos projetados no EM Noturno"
+          }
+        },
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_measures"
+                        }
+                      },
+                      "Property": "Cor Alunos PEI (fonts)"
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_measures"
+                        }
+                      },
+                      "Property": "Cor Alunos PEI (background)"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "_measures.Qtd. de alunos projetados no PEI"
+          }
+        },
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_measures"
+                        }
+                      },
+                      "Property": "Cor Alunos # Salas de Aula (fonts) "
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_measures"
+                        }
+                      },
+                      "Property": "Cor Alunos # Salas de Aula (background) "
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "_measures.Qtd. de salas de aula nas escolas existentes"
+          }
+        },
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_measures"
+                        }
+                      },
+                      "Property": "Cor Alunos Pendentes (fonts)"
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_measures"
+                        }
+                      },
+                      "Property": "Cor Alunos Pendentes (background)"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "_measures.% matrículas pendentes"
+          }
+        },
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_measures"
+                        }
+                      },
+                      "Property": "Cor Alunos Qualidade Enturmamento (fonts)"
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_measures"
+                        }
+                      },
+                      "Property": "Cor Alunos Qualidade Enturmamento (background)"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "_measures.Demanda e coleta: qualidade do enturmamento"
+          }
+        },
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_measures"
+                        }
+                      },
+                      "Property": "Cor Alunos Rendimento (fonts)"
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_measures"
+                        }
+                      },
+                      "Property": "Cor Alunos Rendimento (background)"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "_measures.Rendimento: turmas lançadas dentro do prazo"
+          }
+        },
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_measures"
+                        }
+                      },
+                      "Property": "Cor Alunos Fechamento (fonts)"
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_measures"
+                        }
+                      },
+                      "Property": "Cor Alunos Fechamento (background)"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "_measures.Fechamento: turmas lançadas dentro do prazo"
+          }
+        },
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_measures"
+                        }
+                      },
+                      "Property": "Cor Alunos Bolsa Família (fonts)"
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_measures"
+                        }
+                      },
+                      "Property": "Cor Alunos Bolsa Família (background)"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "_measures.Bolsa Família: % de não informados"
+          }
+        },
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_measures"
+                        }
+                      },
+                      "Property": "Cor Alunos Diverg. Matrícula (fonts)"
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_measures"
+                        }
+                      },
+                      "Property": "Cor Alunos Diverg. Matrícula (background)"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "_measures.Censo Escolar: % de divergências na matrícula"
+          }
+        },
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_measures"
+                        }
+                      },
+                      "Property": "Cor Alunos Diverg. Rendimento (fonts)"
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_measures"
+                        }
+                      },
+                      "Property": "Cor Alunos Diverg. Rendimento (background)"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "_measures.Censo Escolar: % de divergência na taxa de aprovação"
+          }
+        },
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_measures"
+                        }
+                      },
+                      "Property": "Cor Alunos Cadastro Escola (fonts)"
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_measures"
+                        }
+                      },
+                      "Property": "Cor Alunos Cadastro Escola (background)"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "_measures.Cadastro de Escolas: % de cadastros inválidos"
+          }
+        },
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_measures"
+                        }
+                      },
+                      "Property": "Cor Alunos Cadastro Aluno (fonts)"
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_measures"
+                        }
+                      },
+                      "Property": "Cor Alunos Cadastro Aluno (background)"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "_measures.Cadastro de Alunos: % de cadastros inválidos"
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridVerticalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.2
+                    }
+                  }
+                }
+              }
+            },
+            "gridVerticalWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "110D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Painel de Excelência"
+                          }
+                        },
+                        "Property": "Categoria"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Total'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Painel de Excelência"
+                          }
+                        },
+                        "Property": "Indicador"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Escolas Estaduais'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "110D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Painel de Excelência"
+                          }
+                        },
+                        "Property": "Categoria"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Planejamento da Rede Escolar'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Painel de Excelência"
+                          }
+                        },
+                        "Property": "Indicador"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Alunos Noturnos'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "110D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Painel de Excelência"
+                          }
+                        },
+                        "Property": "Categoria"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Planejamento da Rede Escolar'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Painel de Excelência"
+                          }
+                        },
+                        "Property": "Indicador"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Alunos PEI'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "110D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Painel de Excelência"
+                          }
+                        },
+                        "Property": "Categoria"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Planejamento da Rede Escolar'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Painel de Excelência"
+                          }
+                        },
+                        "Property": "Indicador"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'# Salas de Aula'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "110D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Painel de Excelência"
+                          }
+                        },
+                        "Property": "Categoria"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Matrícula e Vida Escolar'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Painel de Excelência"
+                          }
+                        },
+                        "Property": "Indicador"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'% Alunos Pendentes'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "110D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Painel de Excelência"
+                          }
+                        },
+                        "Property": "Categoria"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Matrícula e Vida Escolar'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Painel de Excelência"
+                          }
+                        },
+                        "Property": "Indicador"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Qualidade Enturm.'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "130D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Painel de Excelência"
+                          }
+                        },
+                        "Property": "Categoria"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Matrícula e Vida Escolar'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Painel de Excelência"
+                          }
+                        },
+                        "Property": "Indicador"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Rendimento'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "130D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Painel de Excelência"
+                          }
+                        },
+                        "Property": "Categoria"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Matrícula e Vida Escolar'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Painel de Excelência"
+                          }
+                        },
+                        "Property": "Indicador"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Fechamento'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "142.64606613030716D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Painel de Excelência"
+                          }
+                        },
+                        "Property": "Categoria"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Matrícula e Vida Escolar'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Painel de Excelência"
+                          }
+                        },
+                        "Property": "Indicador"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Bolsa Família: % não Inf.'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "110D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Painel de Excelência"
+                          }
+                        },
+                        "Property": "Categoria"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Censo e Precisão de Dados'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Painel de Excelência"
+                          }
+                        },
+                        "Property": "Indicador"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Diverg. Matrícula'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "140D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Painel de Excelência"
+                          }
+                        },
+                        "Property": "Categoria"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Censo e Precisão de Dados'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Painel de Excelência"
+                          }
+                        },
+                        "Property": "Indicador"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Diverg. Rendimento'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "110D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Painel de Excelência"
+                          }
+                        },
+                        "Property": "Categoria"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Censo e Precisão de Dados'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Painel de Excelência"
+                          }
+                        },
+                        "Property": "Indicador"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Cadastro Escola'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "110D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Painel de Excelência"
+                          }
+                        },
+                        "Property": "Categoria"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Censo e Precisão de Dados'"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Painel de Excelência"
+                          }
+                        },
+                        "Property": "Indicador"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Cadastro Aluno'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "434.6972834057666D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "excelencias.DIRETORIA_NM_DIRETORIA"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "121.6203844225859D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_measures.% matrículas pendentes"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "134.76307922619827D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_measures.Demanda e coleta: qualidade do enturmamento"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "102.7596495873667D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_measures.Qtd. de salas de aula nas escolas existentes"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "103.80970935753363D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_measures.Qtd. de alunos projetados no PEI"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "108.52523928512004D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_measures.Qtd. de alunos projetados no EM Noturno"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "143.52625301312025D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_measures.Bolsa Família: % de não informados"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "115.66797178912785D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_measures.Censo Escolar: % de divergências na matrícula"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "137.5406294465031D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_measures.Censo Escolar: % de divergência na taxa de aprovação"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "111.85826329749455D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_measures.Cadastro de Escolas: % de cadastros inválidos"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "109.85823786711103D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_measures.Cadastro de Alunos: % de cadastros inválidos"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "106.47767826084272D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(excelencia_objetivo.alunos_noturnos)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "83.33398275136774D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(excelencia_objetivo.alunos_pei)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "94.57282193901034D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(excelencia_objetivo.salas_aula)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "131.85824917731247D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(excelencia_objetivo.alunos_pendentes)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "116.33493816282311D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(excelencia_objetivo.qualidade_entur)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "144.47862649190733D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(excelencia_objetivo.bolsa_percent_nao_informado)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "118.33494593561738D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(excelencia_objetivo.diverg_matricula)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "144.95437432853336D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(excelencia_objetivo.diverg_rendimento)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "112.85921472473423D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(excelencia_objetivo.cadastro_escola)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "112.52624280544133D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(excelencia_objetivo.cadastro_aluno)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "345.28543707520475D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "excelencia_objetivo.diretoria"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Objetivos PEX'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "'15'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Painel Consolidado de metas por URE'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "'12'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "spacing": [
+        {
+          "properties": {
+            "customizeSpacing": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "verticalSpacing": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
+            "spaceBelowSubTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#D1D1D1'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "preset": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Custom'"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "86D"
+                }
+              }
+            },
+            "shadowSpread": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "shadowBlur": {
+              "expr": {
+                "Literal": {
+                  "Value": "3D"
+                }
+              }
+            },
+            "angle": {
+              "expr": {
+                "Literal": {
+                  "Value": "90D"
+                }
+              }
+            },
+            "shadowDistance": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "foreground": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#6D6D6D'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

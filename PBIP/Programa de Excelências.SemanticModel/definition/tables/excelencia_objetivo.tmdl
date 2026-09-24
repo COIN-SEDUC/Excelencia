@@ -1,0 +1,195 @@
+table excelencia_objetivo
+	lineageTag: cab14e3b-fa96-4415-b540-993c0a269739
+
+	column chave
+		dataType: string
+		lineageTag: 2d30e0dd-1971-4c3d-be7f-6459cc9a560f
+		summarizeBy: none
+		sourceColumn: chave
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ano_ref
+		dataType: int64
+		formatString: 0
+		lineageTag: 3b8cf31c-9407-4a5c-b8c6-5c6292d95308
+		summarizeBy: none
+		sourceColumn: ano_ref
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column diretoria
+		dataType: string
+		lineageTag: 629ee3e5-c9de-4226-afb9-9b35648d25fb
+		summarizeBy: none
+		sourceColumn: diretoria
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column escolas
+		dataType: int64
+		formatString: 0
+		lineageTag: 9cbfc071-54e8-42be-b73c-a288325f33fc
+		summarizeBy: none
+		sourceColumn: escolas
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column alunos_noturnos
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 2c336dc2-f1c8-474d-9926-cb5963b96d04
+		summarizeBy: none
+		sourceColumn: alunos_noturnos
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column alunos_pei
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: a6b3e0ed-a60a-48fc-836e-959745f1a5ac
+		summarizeBy: none
+		sourceColumn: alunos_pei
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column salas_aula
+		dataType: int64
+		formatString: 0
+		lineageTag: 2b8e0aff-be74-4834-9053-a71e075347be
+		summarizeBy: none
+		sourceColumn: salas_aula
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column alunos_pendentes
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: bf344195-e696-43ff-9049-95064f544fd1
+		summarizeBy: none
+		sourceColumn: alunos_pendentes
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column qualidade_entur
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: fa2b9cbf-ac01-4344-b5df-5b3620c5d788
+		summarizeBy: none
+		sourceColumn: qualidade_entur
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column rendimento
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 99a2b022-b1c9-4c54-be96-9b08b41fa9a0
+		summarizeBy: none
+		sourceColumn: rendimento
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column fechamento
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: e152d74e-6722-4c88-990d-718965a2d6b3
+		summarizeBy: none
+		sourceColumn: fechamento
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column bolsa_percent_nao_informado
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: beb7b32d-ee6c-41f6-9b77-c1c82edcf81b
+		summarizeBy: none
+		sourceColumn: bolsa_percent_nao_informado
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column diverg_matricula
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: c61ac6d4-d2e0-477b-8c6a-7dc3ef456921
+		summarizeBy: none
+		sourceColumn: diverg_matricula
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column diverg_rendimento
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 11c94d3d-94e7-446a-9647-e08586e3e7f0
+		summarizeBy: none
+		sourceColumn: diverg_rendimento
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column cadastro_escola
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 47a268d7-28ed-4c2a-85b0-26202cc955e7
+		summarizeBy: none
+		sourceColumn: cadastro_escola
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column cadastro_aluno
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: f5adbf33-6ae4-4d7e-adc9-96d44ec4bb44
+		summarizeBy: none
+		sourceColumn: cadastro_aluno
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition excelencia_objetivo = m
+		mode: import
+		queryGroup: 'Databricks connector'
+		source =
+				let
+				    Source = DatabricksMultiCloud.Catalogs(server_hostname, HTTP_path, [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0"]),
+				    citem_Database = Source{[Name="citem",Kind="Database"]}[Data],
+				    power_bi_Schema = citem_Database{[Name="power_bi",Kind="Schema"]}[Data],
+				    excelencia_Table = power_bi_Schema{[Name="excelencia_objetivo",Kind="Table"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(excelencia_Table, each ([chave] <> null and [chave] <> "") and ([ano_ref] = 2027)),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows",{{"alunos_noturnos", Percentage.Type}, {"alunos_pei", Percentage.Type}, {"alunos_pendentes", Percentage.Type}, {"qualidade_entur", Percentage.Type}, {"rendimento", Percentage.Type}, {"fechamento", Percentage.Type}, {"bolsa_percent_nao_informado", Percentage.Type}, {"diverg_matricula", Percentage.Type}, {"diverg_rendimento", Percentage.Type}, {"cadastro_escola", Percentage.Type}, {"cadastro_aluno", Percentage.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,427 @@
+table excelencias
+	lineageTag: c2810344-c6e9-4d25-a4e3-b4789cec0aa7
+
+	column DIRETORIA_NM_DIRETORIA
+		dataType: string
+		lineageTag: 6c7b30d0-c595-4483-aaaa-b35ff01ae873
+		summarizeBy: none
+		sourceColumn: DIRETORIA_NM_DIRETORIA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ds_rede_ensino
+		dataType: string
+		lineageTag: 6eca78ad-c708-4416-a749-6f735cba4d00
+		summarizeBy: none
+		sourceColumn: ds_rede_ensino
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Escolas
+		dataType: int64
+		formatString: 0
+		lineageTag: 91e79f83-1379-4fe2-8f7a-192e3baf87d9
+		summarizeBy: sum
+		sourceColumn: Escolas
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTD_TURMAS_FECH_1_BI
+		dataType: int64
+		formatString: 0
+		lineageTag: fe3cbcb4-a317-4d51-afba-76072d9e42d3
+		summarizeBy: sum
+		sourceColumn: QTD_TURMAS_FECH_1_BI
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTD_TURMAS_FECH_2_BI
+		dataType: int64
+		formatString: 0
+		lineageTag: 1ff386c8-0cef-43ef-a415-2ba3349e776f
+		summarizeBy: sum
+		sourceColumn: QTD_TURMAS_FECH_2_BI
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTD_TURMAS_FECH_3_BI
+		dataType: int64
+		formatString: 0
+		lineageTag: d7b20c3b-7cde-4eee-966b-49fedc142ed3
+		summarizeBy: sum
+		sourceColumn: QTD_TURMAS_FECH_3_BI
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTD_TURMAS_FECH_4_BI
+		dataType: int64
+		formatString: 0
+		lineageTag: f7ac051b-590c-4bed-9413-f97e476f7611
+		summarizeBy: sum
+		sourceColumn: QTD_TURMAS_FECH_4_BI
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTD_TURMAS_1_BI
+		dataType: int64
+		formatString: 0
+		lineageTag: f2f841b3-78ff-4a29-9699-cdef3413d965
+		summarizeBy: sum
+		sourceColumn: QTD_TURMAS_1_BI
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTD_TURMAS_2_BI
+		dataType: int64
+		formatString: 0
+		lineageTag: 434f486a-4da3-4847-815b-546aaf96b34b
+		summarizeBy: sum
+		sourceColumn: QTD_TURMAS_2_BI
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTD_TURMAS_3_BI
+		dataType: int64
+		formatString: 0
+		lineageTag: c99b845c-18e1-4ae2-9b55-65a7b3d35bf3
+		summarizeBy: sum
+		sourceColumn: QTD_TURMAS_3_BI
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTD_TURMAS_4_BI
+		dataType: int64
+		formatString: 0
+		lineageTag: b380778b-4f3e-44e3-aace-b71bf880a49f
+		summarizeBy: sum
+		sourceColumn: QTD_TURMAS_4_BI
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTD_TURMAS_REND_CONCLUIDO
+		dataType: int64
+		formatString: 0
+		lineageTag: 24df490f-745f-43a3-ab07-b6ff224894bb
+		summarizeBy: sum
+		sourceColumn: QTD_TURMAS_REND_CONCLUIDO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TT_ALUNOS
+		dataType: int64
+		formatString: 0
+		lineageTag: 60f9e006-93cb-4c70-8dba-bcb7f9b91bb8
+		summarizeBy: sum
+		sourceColumn: TT_ALUNOS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QT_ALUNOS_PENDENTES
+		dataType: int64
+		formatString: 0
+		lineageTag: c5ce5e19-4ac9-4a7b-9d95-7986d5faacd4
+		summarizeBy: sum
+		sourceColumn: QT_ALUNOS_PENDENTES
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QT_ALUNOS_NOTURNO
+		dataType: int64
+		formatString: 0
+		lineageTag: 8fc3f592-528a-4af9-a550-778fc807764b
+		summarizeBy: sum
+		sourceColumn: QT_ALUNOS_NOTURNO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTD_ALUNO_ENS_MEDIO
+		dataType: int64
+		formatString: 0
+		lineageTag: 864e94ce-d150-487a-a3f7-c4666de3e7ab
+		summarizeBy: sum
+		sourceColumn: QTD_ALUNO_ENS_MEDIO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QT_ALUNOS_PEI
+		dataType: int64
+		formatString: 0
+		lineageTag: 2b6bccb9-1349-4de8-8da4-3cf3b90ef614
+		summarizeBy: sum
+		sourceColumn: QT_ALUNOS_PEI
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTD_TURMA_FECH_ATUAL
+		dataType: int64
+		formatString: 0
+		lineageTag: 6913fadc-940d-4b98-92f8-a386a1bd0bde
+		summarizeBy: sum
+		sourceColumn: QTD_TURMA_FECH_ATUAL
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTD_TURMA_ATUAL
+		dataType: int64
+		formatString: 0
+		lineageTag: beb56875-2029-4f73-b6ab-a4778dc0b8a6
+		summarizeBy: sum
+		sourceColumn: QTD_TURMA_ATUAL
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bimestre Atual'
+		dataType: string
+		lineageTag: 7a9c7019-0f57-477c-b7fb-9d0f56d42c19
+		summarizeBy: none
+		sourceColumn: Bimestre Atual
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ESCOLA_CD_ESCOLA
+		dataType: int64
+		formatString: 0
+		lineageTag: 16b1f2d9-6370-4a1c-8584-67f9c600cef1
+		summarizeBy: sum
+		sourceColumn: ESCOLA_CD_ESCOLA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_ESCOLA
+		dataType: string
+		lineageTag: bbdcd4fd-c959-4e78-802a-bd56a2ab4f88
+		summarizeBy: none
+		sourceColumn: NM_ESCOLA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QT_TURMAS_RENDIMENTO
+		dataType: int64
+		formatString: 0
+		lineageTag: 7dbf1ec6-fc4b-4979-a375-04a8f4ec570d
+		summarizeBy: sum
+		sourceColumn: QT_TURMAS_RENDIMENTO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NM_MUNICIPIO
+		dataType: string
+		lineageTag: 15b41fa5-ac86-4746-bb0f-0e509349d9ed
+		summarizeBy: none
+		sourceColumn: NM_MUNICIPIO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TOTAL_ALUNO_BOLSA
+		dataType: double
+		lineageTag: 063d7e52-3010-4c8c-be9b-2334973400df
+		summarizeBy: sum
+		sourceColumn: TOTAL_ALUNO_BOLSA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TOTAL_ALUNO_N_INFORMADO_BOLSA
+		dataType: double
+		lineageTag: a56e4c58-6b38-4b86-a222-d9b378f57a23
+		summarizeBy: sum
+		sourceColumn: TOTAL_ALUNO_N_INFORMADO_BOLSA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TOTAL_SALAS
+		dataType: int64
+		formatString: 0
+		lineageTag: 60fdd862-ad65-4c64-b382-e2da4a2cfff6
+		summarizeBy: sum
+		sourceColumn: TOTAL_SALAS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TOTAL_SALAS_COMPARTILHADAS
+		dataType: int64
+		formatString: 0
+		lineageTag: 5ead059e-6a21-49bb-baac-3919d4f76afe
+		summarizeBy: sum
+		sourceColumn: TOTAL_SALAS_COMPARTILHADAS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TOTAL_MATRICULAS_CURRICULAR
+		dataType: int64
+		formatString: 0
+		lineageTag: e1fbab2a-8ea5-495c-8c29-16eeef780e74
+		summarizeBy: sum
+		sourceColumn: TOTAL_MATRICULAS_CURRICULAR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TOTAL_MATRICULAS
+		dataType: int64
+		formatString: 0
+		lineageTag: 3d9d798f-7dc3-492d-b12f-0b14c10b415e
+		summarizeBy: sum
+		sourceColumn: TOTAL_MATRICULAS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DT_PROCESSAMENTO
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 6ba30182-4fd8-4735-8c56-634e5f63efb5
+		summarizeBy: none
+		sourceColumn: DT_PROCESSAMENTO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column QTD_TURMAS_COLETA
+		dataType: int64
+		formatString: 0
+		lineageTag: 8e89175d-a828-4fa6-8d14-b09f144740b5
+		summarizeBy: sum
+		sourceColumn: QTD_TURMAS_COLETA
+
+		annotation SummarizationSetBy = Automatic
+
+	column SALDO_AMPLIAR
+		dataType: int64
+		formatString: 0
+		lineageTag: 616d50ea-d0c7-4072-9a4a-34eb2c51714d
+		summarizeBy: sum
+		sourceColumn: SALDO_AMPLIAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column SALDO_ADEQUAR
+		dataType: int64
+		formatString: 0
+		lineageTag: d9a9bf89-1c64-48b3-a27a-09b986383960
+		summarizeBy: sum
+		sourceColumn: SALDO_ADEQUAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'NM_ESCOLA + CD_ESCOLA'
+		dataType: string
+		lineageTag: acae48be-55dc-4d6d-a427-52cdc3c4e824
+		summarizeBy: none
+		sourceColumn: NM_ESCOLA + CD_ESCOLA
+
+		annotation SummarizationSetBy = Automatic
+
+	partition excelencias = m
+		mode: import
+		queryGroup: 'Databricks connector'
+		source =
+				let
+				    Source = DatabricksMultiCloud.Catalogs(server_hostname, HTTP_path, [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0"]),
+				    citem_Database = Source{[Name="citem",Kind="Database"]}[Data],
+				    power_bi_Schema = citem_Database{[Name="power_bi",Kind="Schema"]}[Data],
+				    excelencia_Table = power_bi_Schema{[Name="excelencia",Kind="Table"]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(excelencia_Table,{{"TT_ESCOLAS", "Escolas"}}),
+				
+				    // Bimestre atual calculado uma única vez, com base na data de hoje
+				    DataAtual = Date.From(DateTimeZone.FixedLocalNow()),
+				    AnoAtual = Date.Year(DataAtual),
+				    BimestreAtualNum =
+				        if DataAtual >= #date(AnoAtual, 2, 2) and DataAtual <= #date(AnoAtual, 4, 22) then 1
+				        else if DataAtual >= #date(AnoAtual, 4, 23) and DataAtual <= #date(AnoAtual, 7, 6) then 2
+				        else if DataAtual >= #date(AnoAtual, 7, 24) and DataAtual <= #date(AnoAtual, 10, 2) then 3
+				        else if DataAtual >= #date(AnoAtual, 10, 5) and DataAtual <= #date(AnoAtual, 12, 18) then 4
+				        else 0,
+				
+				    #"Added Custom" = Table.AddColumn(#"Renamed Columns", "QTD_TURMA_FECH_ATUAL", each
+				        if BimestreAtualNum = 4 then [QTD_TURMAS_FECH_4_BI]
+				        else if BimestreAtualNum = 3 then [QTD_TURMAS_FECH_3_BI]
+				        else if BimestreAtualNum = 2 then [QTD_TURMAS_FECH_2_BI]
+				        else if BimestreAtualNum = 1 then [QTD_TURMAS_FECH_1_BI]
+				        else 0, Int64.Type),
+				
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "QTD_TURMA_ATUAL", each
+				        if BimestreAtualNum = 4 then [QTD_TURMAS_4_BI]
+				        else if BimestreAtualNum = 3 then [QTD_TURMAS_3_BI]
+				        else if BimestreAtualNum = 2 then [QTD_TURMAS_2_BI]
+				        else if BimestreAtualNum = 1 then [QTD_TURMAS_1_BI]
+				        else 0, Int64.Type),
+				
+				    #"Added Custom2" = Table.AddColumn(#"Added Custom1", "Bimestre Atual", each
+				        if BimestreAtualNum = 4 then "4º Bimestre"
+				        else if BimestreAtualNum = 3 then "3º Bimestre"
+				        else if BimestreAtualNum = 2 then "2º Bimestre"
+				        else if BimestreAtualNum = 1 then "1º Bimestre"
+				        else "", type text),
+				    #"Added Custom3" = Table.AddColumn(#"Added Custom2", "NM_ESCOLA + CD_ESCOLA", each [NM_ESCOLA] & " (" & Number.ToText([ESCOLA_CD_ESCOLA]) & ")", type text)
+				in
+				    #"Added Custom3"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

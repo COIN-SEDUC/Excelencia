@@ -1,0 +1,17 @@
+/// hostname from databricks
+expression server_hostname = "adb-3401638136312435.15.azuredatabricks.net" meta [IsParameterQuery=true, List={"adb-3401638136312435.15.azuredatabricks.net"}, DefaultValue="adb-3401638136312435.15.azuredatabricks.net", Type="Text", IsParameterQueryRequired=true]
+	lineageTag: d897cbcd-b0d5-486c-b517-5245e73ffcb1
+	queryGroup: 'Databricks connector'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression HTTP_path = "/sql/1.0/warehouses/6800d133425d8010" meta [IsParameterQuery=true, List={"/sql/1.0/warehouses/6800d133425d8010"}, DefaultValue="/sql/1.0/warehouses/6800d133425d8010", Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 93ba0855-583d-4c2e-9324-1cad9c604df6
+	queryGroup: 'Databricks connector'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+

@@ -1,0 +1,68 @@
+table 'Regras Indicadores'
+	lineageTag: 854fb6dc-d6d8-4a79-9b16-687d4b33597a
+
+	column Indicador
+		formatString: 0
+		lineageTag: 6d756f09-7237-40c6-af67-d44511798830
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Indicador]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tipo
+		lineageTag: eb071f6b-859d-488a-802f-52ef4d3c69cb
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Tipo]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Formato
+		lineageTag: 5d61972c-7310-48f7-9deb-bf2cd7fe6bed
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Formato]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Regras Indicadores' = calculated
+		mode: import
+		source = ```
+				--regras utilizadas nas fórmulas de formatação condicional da tabela principal
+				DATATABLE(
+				    "Indicador", INTEGER,
+				    "Tipo", STRING,
+				    "Formato", STRING,
+				    {
+				        {0,  "MAIOR","#,##0"},  -- Total de Escolas
+				        {1,  "MENOR","0.0%"},   -- Qtd. de alunos projetados no EM Noturno
+				        {2,  "MAIOR","0.0%"},   -- Qtd. de alunos projetados no PEI
+				        {3,  "MAIOR","#,##0"},   -- Qtd. de salas de aula nas escolas existentes        
+				        {4,  "MENOR","0.0%"},   -- % matrículas pendentes
+				        {5,  "MENOR","0.0%"},   -- Demanda e coleta: qualidade do enturmamento
+				        {6,  "MAIOR","0.0%"},   -- Rendimento: turmas lançadas dentro do prazo
+				        {7,  "MAIOR","0.0%"},   -- Fechamento: turmas lançadas dentro do prazo
+				        {8,  "MENOR","0.0%"},   -- Bolsa Família: % de não informados
+				        {9,  "MENOR","0.0%"},   -- Censo Escolar: % de divergências na matrícula
+				        {10, "MENOR","0.0%"},   -- Censo Escolar: % de divergência na taxa de aprovação
+				        {11, "MENOR","0.0%"},   -- Cadastro de Escolas: % de cadastros inválidos
+				        {12, "MENOR","0.0%"}   -- Cadastro de Alunos: % de cadastros inválidos
+				    }
+				)
+				
+				/* 
+				 Regras definidas para as cores: 
+				
+				-Noturno: Vermelho são percentuais maiores, verde percentuais menores
+				-PEI: Vermelho são percentuais menores, verde percentuais maiores
+				-Pendentes: Vermelho são percentuais maiores, verde percentuais menores
+				-Qualidade Enturmamento: Vermelho são percentuais maiores, verde percentuais menores
+				-Rendimento/Fechamento: Vermelho são percentuais menores, verde percentuais maiores (mais perto de 100%)
+				-Não info Bolsa Família: Vermelho são percentuais maiores, verde percentuais menores
+				
+				 */
+				```
+
+	annotation PBI_Id = 179f30b273cc45a5926da667e5d3f789
+

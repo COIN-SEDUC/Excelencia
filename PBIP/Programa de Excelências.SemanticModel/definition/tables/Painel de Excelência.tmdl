@@ -1,0 +1,80 @@
+table 'Painel de Excelência'
+	lineageTag: 4015328a-c14b-4f5e-935e-5d15fe4a5d9a
+
+	column Categoria
+		lineageTag: 2de65b3d-d88b-4761-95e3-b45980fe549c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Categoria]
+		sortByColumn: 'Ordem Categoria'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Indicador
+		lineageTag: 1d1ea84e-b157-4a54-b110-e3713365da07
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Indicador]
+		sortByColumn: 'Ordem Indicador'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ordem Indicador'
+		formatString: 0
+		lineageTag: 4023a6ab-f1f8-47b4-91db-1d7aec95f666
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Ordem Indicador]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ordem Categoria'
+		formatString: 0
+		lineageTag: d61d0229-ea33-4141-b8d6-b90937d48d0b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Ordem Categoria]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Link BI'
+		lineageTag: 7825713d-c936-4671-ae25-c210b725e787
+		dataCategory: WebUrl
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Link BI]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Painel de Excelência' = calculated
+		mode: import
+		source =
+				
+				DATATABLE(
+				    "Categoria", STRING,
+				    "Indicador", STRING,
+				    "Link BI", STRING,
+				    "Ordem Indicador", INTEGER,
+				    "Ordem Categoria", INTEGER,
+				    {
+				        {"Total", "Escolas", "", 0, 0},
+				
+				        {"Planejamento da Rede Escolar", "Alunos Noturnos", "", 1, 1},
+				        {"Planejamento da Rede Escolar", "Alunos PEI", "", 2, 1},
+				        {"Planejamento da Rede Escolar", "# Salas de Aula", "https://hubinteligenciaegestao.educacao.sp.gov.br/Dashboard/Dash?ano=2026&id=86", 3, 1},
+				
+				        {"Matrícula e Vida Escolar", "% Alunos Pendentes", "https://hubinteligenciaegestao.educacao.sp.gov.br/Dashboard/Dash?ano=2026&id=108", 4, 2},
+				        {"Matrícula e Vida Escolar", "Qualidade Enturm.", "https://hubinteligenciaegestao.educacao.sp.gov.br/Dashboard/Dash?ano=2026&id=92", 5, 2},
+				        {"Matrícula e Vida Escolar", "Rendimento", "https://hubinteligenciaegestao.educacao.sp.gov.br/Dashboard/Dash?ano=2026&id=56", 6, 2},
+				        {"Matrícula e Vida Escolar", "Fechamento", "https://hubinteligenciaegestao.educacao.sp.gov.br/Dashboard/Dash?ano=2026&id=54", 7, 2},
+				        {"Matrícula e Vida Escolar", "Bolsa Família: % não Inf.", "https://hubinteligenciaegestao.educacao.sp.gov.br/Dashboard/Dash?ano=2026&id=51", 8, 2},
+				
+				        {"Censo e Precisão de Dados", "Diverg. Matrícula", "", 9, 3},
+				        {"Censo e Precisão de Dados", "Diverg. Rendimento", "", 10, 3},
+				        {"Censo e Precisão de Dados", "Cadastro Escola", "", 11, 3},
+				        {"Censo e Precisão de Dados", "Cadastro Aluno", "", 12, 3}
+				    }
+				)
+
+	annotation PBI_Id = 5158c1382b554e4fa02cc127764a6bad
+

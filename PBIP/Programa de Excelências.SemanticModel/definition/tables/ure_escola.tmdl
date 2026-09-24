@@ -1,0 +1,46 @@
+table ure_escola
+	lineageTag: 1cc1fbe7-00ee-44bc-a749-f12fa1431d84
+
+	column ure_escola
+		lineageTag: 6b38d4a1-71ba-4b04-89fe-8ac311fdd86a
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'ure_escola Order'
+
+		relatedColumnDetails
+			groupByColumn: 'ure_escola Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ure_escola Fields'
+		lineageTag: 66a855ac-2eae-46d1-bd31-2a44d91ac251
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'ure_escola Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ure_escola Order'
+		formatString: 0
+		lineageTag: 22bf7915-7187-4789-9a38-8881859c2b30
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ure_escola = calculated
+		mode: import
+		source =
+				{
+				    ("DIRETORIA_NM_DIRETORIA", NAMEOF('excelencias'[DIRETORIA_NM_DIRETORIA]), 0),
+				    ("NM_ESCOLA", NAMEOF('excelencias'[NM_ESCOLA]), 1)
+				}
+
+	annotation PBI_Id = ad7fa621919147f9b98feed282b7bcb7
+
