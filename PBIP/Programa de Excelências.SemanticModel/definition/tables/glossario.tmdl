@@ -1,0 +1,153 @@
+table glossario
+	lineageTag: d5c917b8-3066-4cdb-ade2-e1260b313e92
+
+	column Categoria
+		dataType: string
+		lineageTag: 262c9c15-0889-404f-992a-dc7aaf9fdf6d
+		summarizeBy: none
+		sourceColumn: Categoria
+		sortByColumn: OrdemCategoria
+
+		changedProperty = IsHidden
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Indicador
+		dataType: string
+		lineageTag: 5ae0c573-bc82-47d7-8cc4-c314a3007bb3
+		summarizeBy: none
+		sourceColumn: Indicador
+		sortByColumn: OrdemIndicador
+
+		changedProperty = IsHidden
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Unidade
+		dataType: string
+		lineageTag: 6d331afb-953f-4775-b318-747d743dc09c
+		summarizeBy: none
+		sourceColumn: Unidade
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: e1d976ed-b736-467b-8fed-5b51a7f2dbae
+		summarizeBy: none
+		sourceColumn: Status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Descricao
+		dataType: string
+		lineageTag: 66c18f7b-fa31-4c8b-ba21-8f37e726592f
+		summarizeBy: none
+		sourceColumn: Descricao
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Calculo
+		dataType: string
+		lineageTag: 8b7f9e90-2a9b-459f-96cb-f933473bdc27
+		summarizeBy: none
+		sourceColumn: Calculo
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LeituraSubida
+		dataType: string
+		lineageTag: 2a205de9-2f4c-4654-9c0b-5c1f4e14c607
+		summarizeBy: none
+		sourceColumn: LeituraSubida
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LeituraDescida
+		dataType: string
+		lineageTag: 48ba224e-e710-4db4-84f1-5b194baa020f
+		summarizeBy: none
+		sourceColumn: LeituraDescida
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CorRegra
+		dataType: string
+		lineageTag: 1abb03f3-0b66-476c-bfd5-f2bc394423bf
+		summarizeBy: none
+		sourceColumn: CorRegra
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cuidado
+		dataType: string
+		lineageTag: 80844d88-bf0a-4503-83a7-c18989d4d014
+		summarizeBy: none
+		sourceColumn: Cuidado
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column _rescued_data
+		dataType: string
+		lineageTag: 963d8ec1-091d-4035-9306-199b7a451afc
+		summarizeBy: none
+		sourceColumn: _rescued_data
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrdemCategoria
+		dataType: int64
+		formatString: 0
+		lineageTag: 38d3f0d2-b9f6-4813-986f-fc838a1857b7
+		summarizeBy: sum
+		sourceColumn: OrdemCategoria
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrdemIndicador
+		dataType: int64
+		formatString: 0
+		lineageTag: a4cd6eb3-ffb1-4d9f-b9ab-9fc1aa4a9a8a
+		summarizeBy: sum
+		sourceColumn: OrdemIndicador
+
+		annotation SummarizationSetBy = Automatic
+
+	partition glossario = m
+		mode: import
+		queryGroup: 'Databricks connector'
+		source =
+				let
+				    Source = DatabricksMultiCloud.Catalogs(server_hostname, HTTP_path, [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0"]),
+				    citem_Database = Source{[Name="citem",Kind="Database"]}[Data],
+				    power_bi_Schema = citem_Database{[Name="power_bi",Kind="Schema"]}[Data],
+				    excelencia_glossario_Table = power_bi_Schema{[Name="excelencia_glossario",Kind="Table"]}[Data]
+				in
+				    excelencia_glossario_Table
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

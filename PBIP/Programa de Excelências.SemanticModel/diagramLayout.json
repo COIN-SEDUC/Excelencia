@@ -1,0 +1,169 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 249.11111111111114,
+            "y": 0
+          },
+          "nodeIndex": "excelencias",
+          "nodeLineageTag": "c2810344-c6e9-4d25-a4e3-b4789cec0aa7",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "_measures",
+          "nodeLineageTag": "77fbff27-27fd-4b6f-a920-99be3d08af1d",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 9,
+          "expandedHeight": 224
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 86.555555555555543
+          },
+          "nodeIndex": "d_organizacao_tabela",
+          "nodeLineageTag": "aaebd25d-3034-4df9-970a-808ce5726df2",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 11,
+          "expandedHeight": 152
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 173.22222222222223
+          },
+          "nodeIndex": "ure_escola",
+          "nodeLineageTag": "1cc1fbe7-00ee-44bc-a749-f12fa1431d84",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 10,
+          "expandedHeight": 152
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 260.72222222222217
+          },
+          "nodeIndex": "Painel de Excelência",
+          "nodeLineageTag": "4015328a-c14b-4f5e-935e-5d15fe4a5d9a",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 1,
+          "expandedHeight": 200
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 352
+          },
+          "nodeIndex": "Regras Indicadores",
+          "nodeLineageTag": "854fb6dc-d6d8-4a79-9b16-687d4b33597a",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 2,
+          "expandedHeight": 200
+        },
+        {
+          "location": {
+            "x": 533.11111111111109,
+            "y": 62
+          },
+          "nodeIndex": "censo_escolar_coleta",
+          "nodeLineageTag": "d4a9241d-d71a-4d42-98a8-6445f1c06f38",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 817.11111111111109,
+            "y": 62
+          },
+          "nodeIndex": "sed_congelado_maio_26",
+          "nodeLineageTag": "677b7222-8c3b-4657-85ee-608cda9ca05f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 542.22222222222229,
+            "y": 396.4444444444444
+          },
+          "nodeIndex": "excelencia_objetivo",
+          "nodeLineageTag": "cab14e3b-fa96-4415-b540-993c0a269739",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 1101.1111111111111,
+            "y": 198.22222222222217
+          },
+          "nodeIndex": "glossario",
+          "nodeLineageTag": "d5c917b8-3066-4cdb-ade2-e1260b313e92",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 1385.1111111111111,
+            "y": 272.22222222222217
+          },
+          "nodeIndex": "parametro_metricas",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 7
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 90,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

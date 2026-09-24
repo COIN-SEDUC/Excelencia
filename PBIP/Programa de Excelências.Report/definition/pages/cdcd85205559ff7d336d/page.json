@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "cdcd85205559ff7d336d",
+  "displayName": "tt_acompanhamento",
+  "displayOption": "ActualSize",
+  "height": 250,
+  "width": 400,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "62fc1bdc83ce41c1ed2d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "excelencia_objetivo"
+              }
+            },
+            "Property": "diretoria"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {}
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode",
+  "type": "Tooltip"
+}

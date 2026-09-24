@@ -1,0 +1,57 @@
+table parametro_metricas
+	lineageTag: a2b755aa-03b5-4757-bed9-91daf0f8bebf
+
+	column parametro_meta
+		lineageTag: ada4b5a5-b37d-462c-8ad2-410b5a83be8e
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'parametro_meta Order'
+
+		relatedColumnDetails
+			groupByColumn: 'parametro_meta Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'parametro_meta Fields'
+		lineageTag: b32f617f-8451-472e-ae7c-57d082277b42
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'parametro_meta Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'parametro_meta Order'
+		formatString: 0
+		lineageTag: 17d7cf13-7f58-4f7a-9e96-8ce741dfc951
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition parametro_metricas = calculated
+		mode: import
+		source =
+				{
+				    ("Escolas", NAMEOF('_measures'[Total de Escolas]), 0),
+				    ("Alunos Noturnos", NAMEOF('_measures'[Qtd. de alunos projetados no EM Noturno]), 1),
+				    ("Alunos PEI", NAMEOF('_measures'[Qtd. de alunos projetados no PEI]), 2),
+				    ("# Salas de Aula", NAMEOF('_measures'[Qtd. de salas de aula nas escolas existentes]), 3),
+				    ("Alunos Pendentes", NAMEOF('_measures'[% matrículas pendentes]), 4),
+				    ("Qualidade Enturm.", NAMEOF('_measures'[Demanda e coleta: qualidade do enturmamento]), 5),
+				    ("Rendimento", NAMEOF('_measures'[Rendimento: turmas lançadas dentro do prazo]), 6),
+				    ("Fechamento", NAMEOF('_measures'[Fechamento: turmas lançadas dentro do prazo]), 7),
+				    ("Bolsa Família: % não info.", NAMEOF('_measures'[Bolsa Família: % de não informados]), 8),
+				    ("Diverg. Matrícula", NAMEOF('_measures'[Censo Escolar: % de divergências na matrícula]), 9),
+				    ("Diverg. Rendimento", NAMEOF('_measures'[Censo Escolar: % de divergência na taxa de aprovação]), 10),
+				    ("Cadastro Escola", NAMEOF('_measures'[Cadastro de Escolas: % de cadastros inválidos]), 11),
+				    ("Cadastro Aluno", NAMEOF('_measures'[Cadastro de Alunos: % de cadastros inválidos]), 12)
+				}
+
+	annotation PBI_Id = 4633bf9ddb3f42e685943cac0512b1af
+

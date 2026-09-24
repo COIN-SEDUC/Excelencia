@@ -1,0 +1,1689 @@
+table _measures
+	lineageTag: 77fbff27-27fd-4b6f-a920-99be3d08af1d
+
+	measure 'Qtd. de alunos projetados no EM Noturno' =
+			
+			VAR _01 = SUM(excelencias[QT_ALUNOS_NOTURNO])
+			VAR _02 = SUM(excelencias[QTD_ALUNO_ENS_MEDIO])
+			
+			RETURN
+			    DIVIDE(
+			        _01,
+			        _02,
+			        BLANK()
+			    )
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Métricas\Otimização da Rede Escolar
+		lineageTag: 5e7925c3-e1a2-4adc-80e7-5f6a87dc5ae5
+
+		changedProperty = IsHidden
+
+	measure 'Qtd. de alunos projetados no PEI' =
+			
+			VAR _01 = SUM(excelencias[QT_ALUNOS_PEI])
+			VAR _02 = SUM(excelencias[TT_ALUNOS])
+			
+			RETURN
+			DIVIDE(
+			    _01,
+			    _02,
+			    BLANK()
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Métricas\Otimização da Rede Escolar
+		lineageTag: 48a92e81-9ec9-4535-a221-59216addf636
+
+		changedProperty = IsHidden
+
+	measure 'Qtd. de salas de aula nas escolas existentes' = ```
+			
+			
+			SUM( excelencias[TOTAL_SALAS] )
+			
+			```
+		formatString: #,##0
+		displayFolder: Métricas\Otimização da Rede Escolar
+		lineageTag: 587a2ce5-076f-4eeb-9846-2ed841570ef5
+
+		changedProperty = IsHidden
+
+	measure '% matrículas pendentes' = ```
+			
+			VAR _01 = SUM(excelencias[QT_ALUNOS_PENDENTES])
+			VAR _02 = SUM(excelencias[TT_ALUNOS])
+			
+			RETURN
+			DIVIDE(
+			    _01,
+			    _02,
+			    0
+			)
+			
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Métricas\Matrícula e Vida Escolar
+		lineageTag: 733d911e-65cc-46ba-aca7-6c328a8eeef8
+
+		changedProperty = IsHidden
+
+	measure 'Demanda e coleta: qualidade do enturmamento' = ```
+			
+			VAR _saldo = 
+			    SUM(excelencias[SALDO_AMPLIAR]) + SUM(excelencias[SALDO_ADEQUAR]) 
+			
+			VAR _turm = 
+			    SUM(excelencias[QTD_TURMAS_COLETA])
+			
+			RETURN
+			    DIVIDE(
+			        _saldo,
+			        _turm,
+			        0
+			    )
+			
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Métricas\Matrícula e Vida Escolar
+		lineageTag: 103eace6-5356-42ee-bcc4-3757348b8a6f
+
+		changedProperty = IsHidden
+
+	measure 'Rendimento: turmas lançadas dentro do prazo' = ```
+			
+			VAR _01 = SUM(excelencias[QTD_TURMAS_REND_CONCLUIDO])
+			VAR _02 = SUM(excelencias[QT_TURMAS_RENDIMENTO])
+			
+			RETURN
+			DIVIDE(
+			    _01,
+			    _02,
+			    0
+			)
+			
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Métricas\Matrícula e Vida Escolar
+		lineageTag: 758646a3-359d-45b3-82f7-62c891e663b6
+
+		changedProperty = IsHidden
+
+	measure 'Fechamento: turmas lançadas dentro do prazo' = ```
+			
+			VAR _01 = SUM(excelencias[QTD_TURMA_FECH_ATUAL])
+			VAR _02 = SUM(excelencias[QTD_TURMA_ATUAL])
+			
+			RETURN
+			DIVIDE(
+			    _01,
+			    _02,
+			    0
+			)
+			
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Métricas\Matrícula e Vida Escolar
+		lineageTag: c17485d0-c421-45bc-91f7-35e4780d9387
+
+		changedProperty = IsHidden
+
+	measure 'Bolsa Família: % de não informados' = ```
+			
+			VAR _01 = SUM( excelencias[TOTAL_ALUNO_N_INFORMADO_BOLSA] )
+			VAR _02 = SUM( excelencias[TOTAL_ALUNO_BOLSA] ) 
+			
+			RETURN
+			DIVIDE(
+			    _01,
+			    _02,
+			    0
+			)
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Métricas\Matrícula e Vida Escolar
+		lineageTag: b0a2dd8c-9037-454a-977c-24837929a885
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Censo Escolar: % de divergências na matrícula' = ```
+			
+			VAR _MatriculasSED =
+			    CALCULATE (
+			        SUM ( excelencias[TOTAL_MATRICULAS] ),
+			        excelencias[TOTAL_MATRICULAS] > 0,
+			        excelencias[TOTAL_MATRICULAS_CURRICULAR] > 0
+			    )
+			 
+			VAR _MatriculasCenso =
+			    CALCULATE (
+			        SUM ( excelencias[TOTAL_MATRICULAS_CURRICULAR] ),
+			        excelencias[TOTAL_MATRICULAS] > 0,
+			        excelencias[TOTAL_MATRICULAS_CURRICULAR] > 0
+			    )
+			 
+			RETURN
+			DIVIDE (
+			    _MatriculasCenso - _MatriculasSED,
+			    _MatriculasSED,
+			    BLANK ()
+			)
+			
+			
+			/* VAR _EscolasSelecionadas =
+			    VALUES ( excelencias[ESCOLA_CD_ESCOLA] )
+			VAR _MatriculasSED =
+			    CALCULATE (
+			        SUMX (
+			            VALUES ( sed_congelado_maio_26[COD_ESC] ),
+			            CALCULATE ( MAX ( sed_congelado_maio_26[total_matriculas] ) )
+			        ),
+			        TREATAS ( _EscolasSelecionadas, sed_congelado_maio_26[COD_ESC] )
+			    )
+			VAR _MatriculasCenso =
+			    CALCULATE (
+			        SUMX (
+			            VALUES ( censo_escolar_coleta[cd_cie] ),
+			            CALCULATE ( MAX ( censo_escolar_coleta[total_matriculas_curricular] ) )
+			        ),
+			        TREATAS ( _EscolasSelecionadas, censo_escolar_coleta[cd_cie] )
+			    )
+			RETURN
+			IF (
+			    ISBLANK ( _MatriculasSED ) ||
+			    ISBLANK ( _MatriculasCenso ) ||
+			    _MatriculasSED = 0,
+			    BLANK (),
+			    DIVIDE (
+			        ABS ( _MatriculasSED - _MatriculasCenso ),
+			        _MatriculasSED
+			    )
+			) */
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Métricas\Censo e Precisão de Dados
+		lineageTag: 676db2c3-a06c-41d4-9b0d-f393c620149d
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Censo Escolar: % de divergência na taxa de aprovação' = ```
+			
+			VAR _01 = 0
+			VAR _02 = 0
+			
+			RETURN
+			DIVIDE(
+			    _01,
+			    _02,
+			    0
+			)
+			
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Métricas\Censo e Precisão de Dados
+		lineageTag: 3583834c-a4e8-46ee-a757-6ccfbd7c7d4d
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cadastro de Escolas: % de cadastros inválidos' = ```
+			
+			VAR _01 = 0
+			VAR _02 = 0
+			
+			RETURN
+			DIVIDE(
+			    _01,
+			    _02,
+			    0
+			)
+			
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Métricas\Censo e Precisão de Dados
+		lineageTag: f36946bb-19e9-46b2-a283-f7354fe25823
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cadastro de Alunos: % de cadastros inválidos' = ```
+			
+			VAR _01 = 0
+			VAR _02 = 0
+			
+			RETURN
+			DIVIDE(
+			    _01,
+			    _02,
+			    0
+			)
+			
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Métricas\Censo e Precisão de Dados
+		lineageTag: aab1f88e-283c-449e-a43c-cb4696208244
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total de Escolas' =
+			
+			SUM(excelencias[Escolas])
+		formatString: #,##0
+		lineageTag: 9658ddb1-5db4-4a0f-b8d3-79c4694a8199
+
+		changedProperty = IsHidden
+
+	measure 'Valor Indicador' =
+			VAR _Ordem =
+			    SELECTEDVALUE ( 'Painel de Excelência'[Ordem Indicador] )
+			VAR _Valor =
+			    [Valor Indicador Numérico]
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        ISBLANK ( _Valor ), BLANK (),
+			        _Ordem IN { 0, 3 }, FORMAT ( _Valor, "#,##0", "pt-BR" ),
+			        FORMAT ( _Valor, "0.00%", "pt-BR" )
+			    )
+		lineageTag: 148aeab8-c56f-4ca8-a210-9baf2d6a569d
+
+		changedProperty = IsHidden
+
+	measure 'Valor Indicador Numérico' =
+			VAR _Ordem =
+			    SELECTEDVALUE ( 'Painel de Excelência'[Ordem Indicador] )
+			RETURN
+			    SWITCH (
+			        _Ordem,
+			        0,  [Total de Escolas],
+			        1,  [Qtd. de alunos projetados no EM Noturno],
+			        2,  [Qtd. de alunos projetados no PEI],
+			        3,  [Qtd. de salas de aula nas escolas existentes],
+			        4,  [% matrículas pendentes],
+			        5,  [Demanda e coleta: qualidade do enturmamento],
+			        6,  [Rendimento: turmas lançadas dentro do prazo],
+			        7,  [Fechamento: turmas lançadas dentro do prazo],
+			        8,  [Bolsa Família: % de não informados],
+			        9,  [Censo Escolar: % de divergências na matrícula],
+			        10, [Censo Escolar: % de divergência na taxa de aprovação],
+			        11, [Cadastro de Escolas: % de cadastros inválidos],
+			        12, [Cadastro de Alunos: % de cadastros inválidos],
+			        BLANK ()
+			    )
+		displayFolder: Auxiliares
+		lineageTag: d1b2d5f7-e775-4889-aa5f-5f674296c8fb
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Link Indicador' =
+			
+			VAR _Ordem =
+			    SELECTEDMEASURE()
+			RETURN
+			    SWITCH (
+			        _Ordem,
+			        --0,  --[Total de Escolas],
+			        --1,  --[Qtd. de alunos projetados no EM Noturno],
+			        --2,  --[Qtd. de alunos projetados no PEI],
+			        [Qtd. de salas de aula nas escolas existentes],  "https://hubinteligenciaegestao.educacao.sp.gov.br/Dashboard/Dash?ano=2026&id=86", --[Qtd. de salas de aula nas escolas existentes],
+			        4,  "https://hubinteligenciaegestao.educacao.sp.gov.br/Dashboard/Dash?ano=2026&id=108", --[% matrículas pendentes],
+			        5,  "https://hubinteligenciaegestao.educacao.sp.gov.br/Dashboard/Dash?ano=2026&id=92", --[Demanda e coleta: qualidade do enturmamento],
+			        6,  "https://hubinteligenciaegestao.educacao.sp.gov.br/Dashboard/Dash?ano=2026&id=56", --[Rendimento: turmas lançadas dentro do prazo],
+			        7,  "https://hubinteligenciaegestao.educacao.sp.gov.br/Dashboard/Dash?ano=2026&id=54", --[Fechamento: turmas lançadas dentro do prazo],
+			        8,  "https://hubinteligenciaegestao.educacao.sp.gov.br/Dashboard/Dash?ano=2026&id=51", --[Bolsa Família: % de não informados],
+			        --9,  --[Censo Escolar: % de divergências na matrícula],
+			        --10, --[Censo Escolar: % de divergência na taxa de aprovação],
+			        --11, --[Cadastro de Escolas: % de cadastros inválidos],
+			        --12, --[Cadastro de Alunos: % de cadastros inválidos],
+			        BLANK ()
+			    )
+		displayFolder: Auxiliares
+		lineageTag: e233039c-746f-44c6-9d98-677a112cc574
+
+		changedProperty = IsHidden
+
+	measure 'Cor Alunos Noturnos (fonts)' = ```
+			-- mesma estrutura para (background)
+			VAR _Valor =
+			    [Qtd. de alunos projetados no EM Noturno]
+			
+			VAR _Tipo =
+			    LOOKUPVALUE(
+			        'Regras Indicadores'[Tipo],
+			        'Regras Indicadores'[Indicador], 1
+			    )
+			
+			VAR _Meta =
+			    SELECTEDVALUE('excelencia_objetivo'[alunos_noturnos])
+			
+			VAR _Atingimento =
+			    SWITCH(
+			        TRUE(),
+			        _Tipo = "MAIOR", DIVIDE(_Valor, _Meta),
+			        _Tipo = "MENOR", DIVIDE(_Meta, _Valor)
+			    )
+			
+			RETURN
+			    IF(
+			        ISINSCOPE(excelencias[NM_ESCOLA]),
+			        BLANK(),
+			        SWITCH(
+			            TRUE(),
+			            ISBLANK(_Valor) || ISBLANK(_Meta) , BLANK(),
+			            _Atingimento >= 1,   "#1E4620",
+			            _Atingimento >= 0.6, "#5C4A0A",
+			            "#5C1A12"
+			        )
+			    )
+			
+			//-------------------------------------------------------------------------------------------------------------------------//
+			/*   background          
+			    _Atingimento >= 1,   "#F3F8F2",
+			    _Atingimento >= 0.6, "#FDFAEF",
+			    "#FFF6F5"     
+			*/
+			```
+		displayFolder: Formatação\Cores
+		lineageTag: bdc41ba4-db52-45d2-b947-f626f84f62af
+
+		changedProperty = IsHidden
+
+	measure 'Cor Alunos Noturnos (background)' =
+			-- mesma estrutura para (fonts)
+			VAR _Valor =
+			    [Qtd. de alunos projetados no EM Noturno]
+			
+			VAR _Tipo =
+			    LOOKUPVALUE(
+			        'Regras Indicadores'[Tipo],
+			        'Regras Indicadores'[Indicador], 1
+			    )
+			
+			VAR _Meta =
+			    SELECTEDVALUE('excelencia_objetivo'[alunos_noturnos])
+			
+			VAR _Atingimento =
+			    SWITCH(
+			        TRUE(),
+			        _Tipo = "MAIOR", DIVIDE(_Valor, _Meta),
+			        _Tipo = "MENOR", DIVIDE(_Meta, _Valor)
+			    )
+			
+			RETURN
+			    IF(
+			        ISINSCOPE(excelencias[NM_ESCOLA]),
+			        BLANK(),
+			        SWITCH(
+			            TRUE(),
+			            ISBLANK(_Valor) || ISBLANK(_Meta), BLANK(),
+			            _Atingimento >= 1,   "#E7F4E5",
+			            _Atingimento >= 0.6, "#FDFCD9",
+			            "#F1DEDC"
+			        )
+			    )
+		displayFolder: Formatação\Cores
+		lineageTag: e043a0cc-2dd0-4478-a0b4-655fd24fb85f
+
+		changedProperty = IsHidden
+
+	measure 'Cor Alunos PEI (fonts)' = ```
+			-- mesma estrutura para (background)
+			VAR _Valor =
+			    [Qtd. de alunos projetados no PEI]
+			
+			VAR _Tipo =
+			    LOOKUPVALUE(
+			        'Regras Indicadores'[Tipo],
+			        'Regras Indicadores'[Indicador], 2
+			    )
+			
+			VAR _Meta =
+			    SELECTEDVALUE('excelencia_objetivo'[alunos_pei])
+			
+			VAR _Atingimento =
+			    SWITCH(
+			        TRUE(),
+			        _Tipo = "MAIOR", DIVIDE(_Valor, _Meta),
+			        _Tipo = "MENOR", DIVIDE(_Meta, _Valor)
+			    )
+			
+			RETURN
+			    IF(
+			        ISINSCOPE(excelencias[NM_ESCOLA]),
+			        BLANK(),
+			        SWITCH(
+			            TRUE(),
+			            ISBLANK(_Valor) || ISBLANK(_Meta) , BLANK(),
+			            _Atingimento >= 1,   "#1E4620",
+			            _Atingimento >= 0.6, "#5C4A0A",
+			            "#5C1A12"
+			        )
+			    )
+			
+			//-------------------------------------------------------------------------------------------------------------------------//
+			/*   background          
+			    _Atingimento >= 1,   "#F3F8F2",
+			    _Atingimento >= 0.6, "#FDFAEF",
+			    "#FFF6F5"     
+			*/
+			```
+		displayFolder: Formatação\Cores
+		lineageTag: 3a654b8a-b4c3-4f74-9e26-072af949d9be
+
+		changedProperty = IsHidden
+
+	measure 'Cor Alunos PEI (background)' =
+			-- mesma estrutura para (font)
+			VAR _Valor =
+			    [Qtd. de alunos projetados no PEI]
+			
+			VAR _Tipo =
+			    LOOKUPVALUE(
+			        'Regras Indicadores'[Tipo],
+			        'Regras Indicadores'[Indicador], 2
+			    )
+			
+			VAR _Meta =
+			    SELECTEDVALUE('excelencia_objetivo'[alunos_pei])
+			
+			VAR _Atingimento =
+			    SWITCH(
+			        TRUE(),
+			        _Tipo = "MAIOR", DIVIDE(_Valor, _Meta),
+			        _Tipo = "MENOR", DIVIDE(_Meta, _Valor)
+			    )
+			
+			RETURN
+			    IF(
+			        ISINSCOPE(excelencias[NM_ESCOLA]),
+			        BLANK(),
+			        SWITCH(
+			            TRUE(),
+			            ISBLANK(_Valor) || ISBLANK(_Meta), BLANK(),
+			            _Atingimento >= 1,   "#E7F4E5",
+			            _Atingimento >= 0.6, "#FDFCD9",
+			            "#F1DEDC"
+			        )
+			    )
+		displayFolder: Formatação\Cores
+		lineageTag: 58597618-bafd-4635-92a6-0ac392780c6a
+
+		changedProperty = IsHidden
+
+	measure 'Cor Alunos # Salas de Aula (fonts) ' = ```
+			-- mesma estrutura para (background)
+			VAR _Valor =
+			    [Qtd. de salas de aula nas escolas existentes]
+			
+			VAR _Tipo =
+			    LOOKUPVALUE(
+			        'Regras Indicadores'[Tipo],
+			        'Regras Indicadores'[Indicador], 3
+			    )
+			
+			VAR _Meta =
+			    SELECTEDVALUE('excelencia_objetivo'[salas_aula])
+			
+			VAR _Atingimento =
+			    SWITCH(
+			        TRUE(),
+			        _Tipo = "MAIOR", DIVIDE(_Valor, _Meta),
+			        _Tipo = "MENOR", DIVIDE(_Meta, _Valor)
+			    )
+			
+			RETURN
+			    IF(
+			        ISINSCOPE(excelencias[NM_ESCOLA]),
+			        BLANK(),
+			        SWITCH(
+			            TRUE(),
+			            ISBLANK(_Valor) || ISBLANK(_Meta) , BLANK(),
+			            _Atingimento >= 1,   "#1E4620",
+			            _Atingimento >= 0.6, "#5C4A0A",
+			            "#5C1A12"
+			        )
+			    )
+			
+			//-------------------------------------------------------------------------------------------------------------------------//
+			/*   background          
+			    _Atingimento >= 1,   "#F3F8F2",
+			    _Atingimento >= 0.6, "#FDFAEF",
+			    "#FFF6F5"     
+			*/
+			```
+		displayFolder: Formatação\Cores
+		lineageTag: 41ef27b7-1cde-4fdb-a2ff-9f6435d3cb06
+
+		changedProperty = IsHidden
+
+	measure 'Cor Alunos # Salas de Aula (background) ' =
+			-- mesma estrutura para (font)
+			VAR _Valor =
+			    [Qtd. de salas de aula nas escolas existentes]
+			
+			VAR _Tipo =
+			    LOOKUPVALUE(
+			        'Regras Indicadores'[Tipo],
+			        'Regras Indicadores'[Indicador], 3
+			    )
+			
+			VAR _Meta =
+			    SELECTEDVALUE('excelencia_objetivo'[salas_aula])
+			
+			VAR _Atingimento =
+			    SWITCH(
+			        TRUE(),
+			        _Tipo = "MAIOR", DIVIDE(_Valor, _Meta),
+			        _Tipo = "MENOR", DIVIDE(_Meta, _Valor)
+			    )
+			
+			RETURN
+			    IF(
+			        ISINSCOPE(excelencias[NM_ESCOLA]),
+			        BLANK(),
+			        SWITCH(
+			            TRUE(),
+			            ISBLANK(_Valor) || ISBLANK(_Meta), BLANK(),
+			            _Atingimento >= 1,   "#E7F4E5",
+			            _Atingimento >= 0.6, "#FDFCD9",
+			            "#F1DEDC"
+			        )
+			    )
+		displayFolder: Formatação\Cores
+		lineageTag: 08782261-5224-4e50-b457-796f86a77711
+
+		changedProperty = IsHidden
+
+	measure 'Cor Alunos Pendentes (fonts)' = ```
+			-- mesma estrutura para (background)
+			VAR _Valor =
+			    [% matrículas pendentes]
+			
+			VAR _Tipo =
+			    LOOKUPVALUE(
+			        'Regras Indicadores'[Tipo],
+			        'Regras Indicadores'[Indicador], 4
+			    )
+			
+			VAR _Meta =
+			    SELECTEDVALUE('excelencia_objetivo'[alunos_pendentes])
+			
+			VAR _Atingimento =
+			    SWITCH(
+			        TRUE(),
+			        _Tipo = "MAIOR", DIVIDE(_Valor, _Meta),
+			        _Tipo = "MENOR", DIVIDE(_Meta, _Valor)
+			    )
+			
+			RETURN
+			    IF(
+			        ISINSCOPE(excelencias[NM_ESCOLA]),
+			        BLANK(),
+			        SWITCH(
+			            TRUE(),
+			            ISBLANK(_Valor) || ISBLANK(_Meta) , BLANK(),
+			            _Atingimento >= 1,   "#1E4620",
+			            _Atingimento >= 0.6, "#5C4A0A",
+			            "#5C1A12"
+			        )
+			    )
+			
+			//-------------------------------------------------------------------------------------------------------------------------//
+			/*   background          
+			    _Atingimento >= 1,   "#F3F8F2",
+			    _Atingimento >= 0.6, "#FDFAEF",
+			    "#FFF6F5"     
+			*/
+			```
+		displayFolder: Formatação\Cores
+		lineageTag: 37205dd0-18b5-4ca3-9419-8525c35d7f8c
+
+		changedProperty = IsHidden
+
+	measure 'Cor Alunos Pendentes (background)' =
+			-- mesma estrutura para (font)
+			VAR _Valor =
+			    [% matrículas pendentes]
+			
+			VAR _Tipo =
+			    LOOKUPVALUE(
+			        'Regras Indicadores'[Tipo],
+			        'Regras Indicadores'[Indicador], 4
+			    )
+			
+			VAR _Meta =
+			    SELECTEDVALUE('excelencia_objetivo'[alunos_pendentes])
+			
+			VAR _Atingimento =
+			    SWITCH(
+			        TRUE(),
+			        _Tipo = "MAIOR", DIVIDE(_Valor, _Meta),
+			        _Tipo = "MENOR", DIVIDE(_Meta, _Valor)
+			    )
+			
+			RETURN
+			    IF(
+			        ISINSCOPE(excelencias[NM_ESCOLA]),
+			        BLANK(),
+			        SWITCH(
+			            TRUE(),
+			            ISBLANK(_Valor) || ISBLANK(_Meta), BLANK(),
+			            _Atingimento >= 1,   "#E7F4E5",
+			            _Atingimento >= 0.6, "#FDFCD9",
+			            "#F1DEDC"
+			        )
+			    )
+		displayFolder: Formatação\Cores
+		lineageTag: c64854d1-1b33-4172-b4f9-85b73a6b8e6a
+
+		changedProperty = IsHidden
+
+	measure 'Cor Alunos Qualidade Enturmamento (fonts)' = ```
+			-- mesma estrutura para (background)
+			VAR _Valor =
+			    [Demanda e coleta: qualidade do enturmamento]
+			
+			VAR _Tipo =
+			    LOOKUPVALUE(
+			        'Regras Indicadores'[Tipo],
+			        'Regras Indicadores'[Indicador], 5
+			    )
+			
+			VAR _Meta =
+			    SELECTEDVALUE('excelencia_objetivo'[qualidade_entur])
+			
+			VAR _Atingimento =
+			    SWITCH(
+			        TRUE(),
+			        _Tipo = "MAIOR", DIVIDE(_Valor, _Meta),
+			        _Tipo = "MENOR", DIVIDE(_Meta, _Valor)
+			    )
+			
+			RETURN
+			    IF(
+			        ISINSCOPE(excelencias[NM_ESCOLA]),
+			        BLANK(),
+			        SWITCH(
+			            TRUE(),
+			            ISBLANK(_Valor) || ISBLANK(_Meta) , BLANK(),
+			            _Atingimento >= 1,   "#1E4620",
+			            _Atingimento >= 0.6, "#5C4A0A",
+			            "#5C1A12"
+			        )
+			    )
+			
+			//-------------------------------------------------------------------------------------------------------------------------//
+			/*   background          
+			    _Atingimento >= 1,   "#F3F8F2",
+			    _Atingimento >= 0.6, "#FDFAEF",
+			    "#FFF6F5"     
+			*/
+			```
+		displayFolder: Formatação\Cores
+		lineageTag: 8d49596f-1ddf-4ad7-b100-4e17a31e7b35
+
+		changedProperty = IsHidden
+
+	measure 'Cor Alunos Qualidade Enturmamento (background)' =
+			-- mesma estrutura para (font)
+			VAR _Valor =
+			    [Demanda e coleta: qualidade do enturmamento]
+			
+			VAR _Tipo =
+			    LOOKUPVALUE(
+			        'Regras Indicadores'[Tipo],
+			        'Regras Indicadores'[Indicador], 5
+			    )
+			
+			VAR _Meta =
+			    SELECTEDVALUE('excelencia_objetivo'[qualidade_entur])
+			
+			VAR _Atingimento =
+			    SWITCH(
+			        TRUE(),
+			        _Tipo = "MAIOR", DIVIDE(_Valor, _Meta),
+			        _Tipo = "MENOR", DIVIDE(_Meta, _Valor)
+			    )
+			
+			RETURN
+			    IF(
+			        ISINSCOPE(excelencias[NM_ESCOLA]),
+			        BLANK(),
+			        SWITCH(
+			            TRUE(),
+			            ISBLANK(_Valor) || ISBLANK(_Meta), BLANK(),
+			            _Atingimento >= 1,   "#E7F4E5",
+			            _Atingimento >= 0.6, "#FDFCD9",
+			            "#F1DEDC"
+			        )
+			    )
+		displayFolder: Formatação\Cores
+		lineageTag: e57b2c8d-f781-4fb3-9604-a010d0f0ad31
+
+		changedProperty = IsHidden
+
+	measure 'Cor Alunos Rendimento (fonts)' = ```
+			-- mesma estrutura para (background)
+			VAR _Valor =
+			    [Rendimento: turmas lançadas dentro do prazo]
+			
+			VAR _Tipo =
+			    LOOKUPVALUE(
+			        'Regras Indicadores'[Tipo],
+			        'Regras Indicadores'[Indicador], 6
+			    )
+			
+			VAR _Meta =
+			    SELECTEDVALUE('excelencia_objetivo'[rendimento])
+			
+			VAR _Atingimento =
+			    SWITCH(
+			        TRUE(),
+			        _Tipo = "MAIOR", DIVIDE(_Valor, _Meta),
+			        _Tipo = "MENOR", DIVIDE(_Meta, _Valor)
+			    )
+			
+			RETURN
+			    IF(
+			        ISINSCOPE(excelencias[NM_ESCOLA]),
+			        BLANK(),
+			        SWITCH(
+			            TRUE(),
+			            ISBLANK(_Valor) || ISBLANK(_Meta) , BLANK(),
+			            _Atingimento >= 1,   "#1E4620",
+			            _Atingimento >= 0.6, "#5C4A0A",
+			            "#5C1A12"
+			        )
+			    )
+			
+			//-------------------------------------------------------------------------------------------------------------------------//
+			/*   background          
+			    _Atingimento >= 1,   "#F3F8F2",
+			    _Atingimento >= 0.6, "#FDFAEF",
+			    "#FFF6F5"     
+			*/
+			```
+		displayFolder: Formatação\Cores
+		lineageTag: efc9e835-9756-470e-a11e-7d819e3d9ed5
+
+		changedProperty = IsHidden
+
+	measure 'Cor Alunos Rendimento (background)' =
+			-- mesma estrutura para (font)
+			VAR _Valor =
+			    [Rendimento: turmas lançadas dentro do prazo]
+			
+			VAR _Tipo =
+			    LOOKUPVALUE(
+			        'Regras Indicadores'[Tipo],
+			        'Regras Indicadores'[Indicador], 6
+			    )
+			
+			VAR _Meta =
+			    SELECTEDVALUE('excelencia_objetivo'[rendimento])
+			
+			VAR _Atingimento =
+			    SWITCH(
+			        TRUE(),
+			        _Tipo = "MAIOR", DIVIDE(_Valor, _Meta),
+			        _Tipo = "MENOR", DIVIDE(_Meta, _Valor)
+			    )
+			
+			RETURN
+			    IF(
+			        ISINSCOPE(excelencias[NM_ESCOLA]),
+			        BLANK(),
+			        SWITCH(
+			            TRUE(),
+			            ISBLANK(_Valor) || ISBLANK(_Meta), BLANK(),
+			            _Atingimento >= 1,   "#E7F4E5",
+			            _Atingimento >= 0.6, "#FDFCD9",
+			            "#F1DEDC"
+			        )
+			    )
+		displayFolder: Formatação\Cores
+		lineageTag: bb87e1a5-f184-4546-9ad1-d2da5e1d451b
+
+		changedProperty = IsHidden
+
+	measure 'Cor Alunos Fechamento (fonts)' = ```
+			-- mesma estrutura para (background)
+			VAR _Valor =
+			    [Fechamento: turmas lançadas dentro do prazo]
+			
+			VAR _Tipo =
+			    LOOKUPVALUE(
+			        'Regras Indicadores'[Tipo],
+			        'Regras Indicadores'[Indicador], 7
+			    )
+			
+			VAR _Meta =
+			    SELECTEDVALUE('excelencia_objetivo'[fechamento])
+			
+			VAR _Atingimento =
+			    SWITCH(
+			        TRUE(),
+			        _Tipo = "MAIOR", DIVIDE(_Valor, _Meta),
+			        _Tipo = "MENOR", DIVIDE(_Meta, _Valor)
+			    )
+			
+			RETURN
+			    IF(
+			        ISINSCOPE(excelencias[NM_ESCOLA]),
+			        BLANK(),
+			        SWITCH(
+			            TRUE(),
+			            ISBLANK(_Valor) || ISBLANK(_Meta) , BLANK(),
+			            _Atingimento >= 1,   "#1E4620",
+			            _Atingimento >= 0.6, "#5C4A0A",
+			            "#5C1A12"
+			        )
+			    )
+			
+			//-------------------------------------------------------------------------------------------------------------------------//
+			/*   background          
+			    _Atingimento >= 1,   "#F3F8F2",
+			    _Atingimento >= 0.6, "#FDFAEF",
+			    "#FFF6F5"     
+			*/
+			```
+		displayFolder: Formatação\Cores
+		lineageTag: 2a21e419-5fe0-4bd9-886b-953a80356160
+
+		changedProperty = IsHidden
+
+	measure 'Cor Alunos Fechamento (background)' =
+			-- mesma estrutura para (font)
+			VAR _Valor =
+			    [Fechamento: turmas lançadas dentro do prazo]
+			
+			VAR _Tipo =
+			    LOOKUPVALUE(
+			        'Regras Indicadores'[Tipo],
+			        'Regras Indicadores'[Indicador], 7
+			    )
+			
+			VAR _Meta =
+			    SELECTEDVALUE('excelencia_objetivo'[fechamento])
+			
+			VAR _Atingimento =
+			    SWITCH(
+			        TRUE(),
+			        _Tipo = "MAIOR", DIVIDE(_Valor, _Meta),
+			        _Tipo = "MENOR", DIVIDE(_Meta, _Valor)
+			    )
+			
+			RETURN
+			    IF(
+			        ISINSCOPE(excelencias[NM_ESCOLA]),
+			        BLANK(),
+			        SWITCH(
+			            TRUE(),
+			            ISBLANK(_Valor) || ISBLANK(_Meta), BLANK(),
+			            _Atingimento >= 1,   "#E7F4E5",
+			            _Atingimento >= 0.6, "#FDFCD9",
+			            "#F1DEDC"
+			        )
+			    )
+		displayFolder: Formatação\Cores
+		lineageTag: a5011523-b0d0-43ff-ba79-b666e6383940
+
+		changedProperty = IsHidden
+
+	measure 'Cor Alunos Bolsa Família (fonts)' = ```
+			-- mesma estrutura para (background)
+			VAR _Valor =
+			    [Bolsa Família: % de não informados]
+			
+			VAR _Tipo =
+			    LOOKUPVALUE(
+			        'Regras Indicadores'[Tipo],
+			        'Regras Indicadores'[Indicador], 8
+			    )
+			
+			VAR _Meta =
+			    SELECTEDVALUE('excelencia_objetivo'[bolsa_percent_nao_informado])
+			
+			VAR _Atingimento =
+			    SWITCH(
+			        TRUE(),
+			        _Tipo = "MAIOR", DIVIDE(_Valor, _Meta),
+			        _Tipo = "MENOR", DIVIDE(_Meta, _Valor)
+			    )
+			
+			RETURN
+			    IF(
+			        ISINSCOPE(excelencias[NM_ESCOLA]),
+			        BLANK(),
+			        SWITCH(
+			            TRUE(),
+			            ISBLANK(_Valor) || ISBLANK(_Meta) , BLANK(),
+			            _Atingimento >= 1,   "#1E4620",
+			            _Atingimento >= 0.6, "#5C4A0A",
+			            "#5C1A12"
+			        )
+			    )
+			
+			//-------------------------------------------------------------------------------------------------------------------------//
+			/*   background          
+			    _Atingimento >= 1,   "#F3F8F2",
+			    _Atingimento >= 0.6, "#FDFAEF",
+			    "#FFF6F5"     
+			*/
+			```
+		displayFolder: Formatação\Cores
+		lineageTag: cdadb346-23e2-4157-8787-c3ff102f5b5c
+
+		changedProperty = IsHidden
+
+	measure 'Cor Alunos Bolsa Família (background)' =
+			-- mesma estrutura para (font)
+			VAR _Valor =
+			    [Bolsa Família: % de não informados]
+			
+			VAR _Tipo =
+			    LOOKUPVALUE(
+			        'Regras Indicadores'[Tipo],
+			        'Regras Indicadores'[Indicador], 8
+			    )
+			
+			VAR _Meta =
+			    SELECTEDVALUE('excelencia_objetivo'[bolsa_percent_nao_informado])
+			
+			VAR _Atingimento =
+			    SWITCH(
+			        TRUE(),
+			        _Tipo = "MAIOR", DIVIDE(_Valor, _Meta),
+			        _Tipo = "MENOR", DIVIDE(_Meta, _Valor)
+			    )
+			
+			RETURN
+			    IF(
+			        ISINSCOPE(excelencias[NM_ESCOLA]),
+			        BLANK(),
+			        SWITCH(
+			            TRUE(),
+			            ISBLANK(_Valor) || ISBLANK(_Meta), BLANK(),
+			            _Atingimento >= 1,   "#E7F4E5",
+			            _Atingimento >= 0.6, "#FDFCD9",
+			            "#F1DEDC"
+			        )
+			    )
+		displayFolder: Formatação\Cores
+		lineageTag: b78672ad-2cd2-43e6-8acc-ac9ecba58f0d
+
+		changedProperty = IsHidden
+
+	measure 'Cor Alunos Diverg. Matrícula (fonts)' = ```
+			-- mesma estrutura para (background)
+			VAR _Valor =
+			    [Censo Escolar: % de divergências na matrícula]
+			
+			VAR _Tipo =
+			    LOOKUPVALUE(
+			        'Regras Indicadores'[Tipo],
+			        'Regras Indicadores'[Indicador], 9
+			    )
+			
+			VAR _Meta =
+			    SELECTEDVALUE('excelencia_objetivo'[diverg_matricula])
+			
+			VAR _Atingimento =
+			    SWITCH(
+			        TRUE(),
+			        _Tipo = "MAIOR", DIVIDE(_Valor, _Meta),
+			        _Tipo = "MENOR", DIVIDE(_Meta, _Valor)
+			    )
+			
+			RETURN
+			    IF(
+			        ISINSCOPE(excelencias[NM_ESCOLA]),
+			        BLANK(),
+			        SWITCH(
+			            TRUE(),
+			            ISBLANK(_Valor) || ISBLANK(_Meta) , BLANK(),
+			            _Atingimento >= 1,   "#1E4620",
+			            _Atingimento >= 0.6, "#5C4A0A",
+			            "#5C1A12"
+			        )
+			    )
+			
+			//-------------------------------------------------------------------------------------------------------------------------//
+			/*   background          
+			    _Atingimento >= 1,   "#F3F8F2",
+			    _Atingimento >= 0.6, "#FDFAEF",
+			    "#FFF6F5"     
+			*/
+			```
+		displayFolder: Formatação\Cores
+		lineageTag: a2525a32-8aa7-4172-9ee4-aaca3879fdff
+
+		changedProperty = IsHidden
+
+	measure 'Cor Alunos Diverg. Matrícula (background)' =
+			-- mesma estrutura para (font)
+			VAR _Valor =
+			    [Censo Escolar: % de divergências na matrícula]
+			
+			VAR _Tipo =
+			    LOOKUPVALUE(
+			        'Regras Indicadores'[Tipo],
+			        'Regras Indicadores'[Indicador], 9
+			    )
+			
+			VAR _Meta =
+			    SELECTEDVALUE('excelencia_objetivo'[diverg_matricula])
+			
+			VAR _Atingimento =
+			    SWITCH(
+			        TRUE(),
+			        _Tipo = "MAIOR", DIVIDE(_Valor, _Meta),
+			        _Tipo = "MENOR", DIVIDE(_Meta, _Valor)
+			    )
+			
+			RETURN
+			    IF(
+			        ISINSCOPE(excelencias[NM_ESCOLA]),
+			        BLANK(),
+			        SWITCH(
+			            TRUE(),
+			            ISBLANK(_Valor) || ISBLANK(_Meta), BLANK(),
+			            _Atingimento >= 1,   "#E7F4E5",
+			            _Atingimento >= 0.6, "#FDFCD9",
+			            "#F1DEDC"
+			        )
+			    )
+		displayFolder: Formatação\Cores
+		lineageTag: ddc1c9bd-db0d-4450-a2ed-1c8ca0859610
+
+		changedProperty = IsHidden
+
+	measure 'Cor Alunos Diverg. Rendimento (fonts)' = ```
+			-- mesma estrutura para (background)
+			VAR _Valor =
+			    [Censo Escolar: % de divergência na taxa de aprovação]
+			
+			VAR _Tipo =
+			    LOOKUPVALUE(
+			        'Regras Indicadores'[Tipo],
+			        'Regras Indicadores'[Indicador], 10
+			    )
+			
+			VAR _Meta =
+			    SELECTEDVALUE('excelencia_objetivo'[diverg_rendimento])
+			
+			VAR _Atingimento =
+			    SWITCH(
+			        TRUE(),
+			        _Tipo = "MAIOR", DIVIDE(_Valor, _Meta),
+			        _Tipo = "MENOR", DIVIDE(_Meta, _Valor)
+			    )
+			
+			RETURN
+			    IF(
+			        ISINSCOPE(excelencias[NM_ESCOLA]),
+			        BLANK(),
+			        SWITCH(
+			            TRUE(),
+			            ISBLANK(_Valor) || ISBLANK(_Meta) , BLANK(),
+			            _Atingimento >= 1,   "#1E4620",
+			            _Atingimento >= 0.6, "#5C4A0A",
+			            "#5C1A12"
+			        )
+			    )
+			
+			//-------------------------------------------------------------------------------------------------------------------------//
+			/*   background          
+			    _Atingimento >= 1,   "#F3F8F2",
+			    _Atingimento >= 0.6, "#FDFAEF",
+			    "#FFF6F5"     
+			*/
+			```
+		displayFolder: Formatação\Cores
+		lineageTag: dddc45fb-516b-4921-ab23-04d8e4260398
+
+		changedProperty = IsHidden
+
+	measure 'Cor Alunos Diverg. Rendimento (background)' =
+			-- mesma estrutura para (font)
+			VAR _Valor =
+			    [Censo Escolar: % de divergência na taxa de aprovação]
+			
+			VAR _Tipo =
+			    LOOKUPVALUE(
+			        'Regras Indicadores'[Tipo],
+			        'Regras Indicadores'[Indicador], 10
+			    )
+			
+			VAR _Meta =
+			    SELECTEDVALUE('excelencia_objetivo'[diverg_rendimento])
+			
+			VAR _Atingimento =
+			    SWITCH(
+			        TRUE(),
+			        _Tipo = "MAIOR", DIVIDE(_Valor, _Meta),
+			        _Tipo = "MENOR", DIVIDE(_Meta, _Valor)
+			    )
+			
+			RETURN
+			    IF(
+			        ISINSCOPE(excelencias[NM_ESCOLA]),
+			        BLANK(),
+			        SWITCH(
+			            TRUE(),
+			            ISBLANK(_Valor) || ISBLANK(_Meta), BLANK(),
+			            _Atingimento >= 1,   "#E7F4E5",
+			            _Atingimento >= 0.6, "#FDFCD9",
+			            "#F1DEDC"
+			        )
+			    )
+		displayFolder: Formatação\Cores
+		lineageTag: 4d835b26-8961-4a73-a515-6ecd0ab5219d
+
+		changedProperty = IsHidden
+
+	measure 'Cor Alunos Cadastro Escola (fonts)' = ```
+			-- mesma estrutura para (background)
+			VAR _Valor =
+			    [Cadastro de Escolas: % de cadastros inválidos]
+			
+			VAR _Tipo =
+			    LOOKUPVALUE(
+			        'Regras Indicadores'[Tipo],
+			        'Regras Indicadores'[Indicador], 11
+			    )
+			
+			VAR _Meta =
+			    SELECTEDVALUE('excelencia_objetivo'[cadastro_escola])
+			
+			VAR _Atingimento =
+			    SWITCH(
+			        TRUE(),
+			        _Tipo = "MAIOR", DIVIDE(_Valor, _Meta),
+			        _Tipo = "MENOR", DIVIDE(_Meta, _Valor)
+			    )
+			
+			RETURN
+			    IF(
+			        ISINSCOPE(excelencias[NM_ESCOLA]),
+			        BLANK(),
+			        SWITCH(
+			            TRUE(),
+			            ISBLANK(_Valor) || ISBLANK(_Meta) , BLANK(),
+			            _Atingimento >= 1,   "#1E4620",
+			            _Atingimento >= 0.6, "#5C4A0A",
+			            "#5C1A12"
+			        )
+			    )
+			
+			//-------------------------------------------------------------------------------------------------------------------------//
+			/*   background          
+			    _Atingimento >= 1,   "#F3F8F2",
+			    _Atingimento >= 0.6, "#FDFAEF",
+			    "#FFF6F5"     
+			*/
+			```
+		displayFolder: Formatação\Cores
+		lineageTag: 8fc782ed-7d14-4650-8f97-93c04c646054
+
+		changedProperty = IsHidden
+
+	measure 'Cor Alunos Cadastro Escola (background)' =
+			-- mesma estrutura para (font)
+			VAR _Valor =
+			    [Cadastro de Escolas: % de cadastros inválidos]
+			
+			VAR _Tipo =
+			    LOOKUPVALUE(
+			        'Regras Indicadores'[Tipo],
+			        'Regras Indicadores'[Indicador], 11
+			    )
+			
+			VAR _Meta =
+			    SELECTEDVALUE('excelencia_objetivo'[cadastro_escola])
+			
+			VAR _Atingimento =
+			    SWITCH(
+			        TRUE(),
+			        _Tipo = "MAIOR", DIVIDE(_Valor, _Meta),
+			        _Tipo = "MENOR", DIVIDE(_Meta, _Valor)
+			    )
+			
+			RETURN
+			    IF(
+			        ISINSCOPE(excelencias[NM_ESCOLA]),
+			        BLANK(),
+			        SWITCH(
+			            TRUE(),
+			            ISBLANK(_Valor) || ISBLANK(_Meta), BLANK(),
+			            _Atingimento >= 1,   "#E7F4E5",
+			            _Atingimento >= 0.6, "#FDFCD9",
+			            "#F1DEDC"
+			        )
+			    )
+		displayFolder: Formatação\Cores
+		lineageTag: 8cf8d547-aa1f-4192-9403-a07fbe4208cb
+
+		changedProperty = IsHidden
+
+	measure 'Cor Alunos Cadastro Aluno (fonts)' = ```
+			-- mesma estrutura para (background)
+			VAR _Valor =
+			    [Cadastro de Alunos: % de cadastros inválidos]
+			
+			VAR _Tipo =
+			    LOOKUPVALUE(
+			        'Regras Indicadores'[Tipo],
+			        'Regras Indicadores'[Indicador], 12
+			    )
+			
+			VAR _Meta =
+			    SELECTEDVALUE('excelencia_objetivo'[cadastro_aluno])
+			
+			VAR _Atingimento =
+			    SWITCH(
+			        TRUE(),
+			        _Tipo = "MAIOR", DIVIDE(_Valor, _Meta),
+			        _Tipo = "MENOR", DIVIDE(_Meta, _Valor)
+			    )
+			
+			RETURN
+			    IF(
+			        ISINSCOPE(excelencias[NM_ESCOLA]),
+			        BLANK(),
+			        SWITCH(
+			            TRUE(),
+			            ISBLANK(_Valor) || ISBLANK(_Meta) , BLANK(),
+			            _Atingimento >= 1,   "#1E4620",
+			            _Atingimento >= 0.6, "#5C4A0A",
+			            "#5C1A12"
+			        )
+			    )
+			
+			//-------------------------------------------------------------------------------------------------------------------------//
+			/*   background          
+			    _Atingimento >= 1,   "#F3F8F2",
+			    _Atingimento >= 0.6, "#FDFAEF",
+			    "#FFF6F5"     
+			*/
+			```
+		displayFolder: Formatação\Cores
+		lineageTag: 1d65461f-acca-4291-a25f-ca84b7c5d4dd
+
+		changedProperty = IsHidden
+
+	measure 'Cor Alunos Cadastro Aluno (background)' =
+			-- mesma estrutura para (font)
+			VAR _Valor =
+			    [Cadastro de Alunos: % de cadastros inválidos]
+			
+			VAR _Tipo =
+			    LOOKUPVALUE(
+			        'Regras Indicadores'[Tipo],
+			        'Regras Indicadores'[Indicador], 12
+			    )
+			
+			VAR _Meta =
+			    SELECTEDVALUE('excelencia_objetivo'[cadastro_aluno])
+			
+			VAR _Atingimento =
+			    SWITCH(
+			        TRUE(),
+			        _Tipo = "MAIOR", DIVIDE(_Valor, _Meta),
+			        _Tipo = "MENOR", DIVIDE(_Meta, _Valor)
+			    )
+			
+			RETURN
+			    IF(
+			        ISINSCOPE(excelencias[NM_ESCOLA]),
+			        BLANK(),
+			        SWITCH(
+			            TRUE(),
+			            ISBLANK(_Valor) || ISBLANK(_Meta), BLANK(),
+			            _Atingimento >= 1,   "#E7F4E5",
+			            _Atingimento >= 0.6, "#FDFCD9",
+			            "#F1DEDC"
+			        )
+			    )
+		displayFolder: Formatação\Cores
+		lineageTag: 52fae1dc-7431-428b-b087-032730689228
+
+		changedProperty = IsHidden
+
+	measure 'Glossario Calculo' =
+			
+			SELECTEDVALUE(glossario[Calculo])
+		displayFolder: Glossário
+		lineageTag: d252dd08-9fad-4653-8da2-73e8c231be5a
+
+		changedProperty = IsHidden
+
+	measure 'Glossario Categoria' =
+			
+			SELECTEDVALUE(glossario[Categoria])
+		displayFolder: Glossário
+		lineageTag: 0aee5d6d-ea1e-4b6a-b783-a8b8e43bc764
+
+		changedProperty = IsHidden
+
+	measure 'Glossario CorRegra' =
+			
+			SELECTEDVALUE(glossario[CorRegra])
+		displayFolder: Glossário
+		lineageTag: 7b3a24e4-8eec-4499-b927-0e2db403f418
+
+		changedProperty = IsHidden
+
+	measure 'Glossario Cuidado' =
+			
+			SELECTEDVALUE(glossario[Cuidado])
+		displayFolder: Glossário
+		lineageTag: 01040d38-36db-4aa8-bb06-d42c32f5092b
+
+		changedProperty = IsHidden
+
+	measure 'Glossario Descricao' =
+			
+			SELECTEDVALUE(glossario[Descricao])
+		displayFolder: Glossário
+		lineageTag: a93a779d-07a2-497d-8943-87774e5df30a
+
+		changedProperty = IsHidden
+
+	measure 'Glossario Indicador' =
+			
+			SELECTEDVALUE(glossario[Indicador])
+		displayFolder: Glossário
+		lineageTag: 70ed0940-3419-443a-857b-e33a03ba5979
+
+		changedProperty = IsHidden
+
+	measure 'Glossario Leitura' = ```
+			
+			VAR _desc = 
+			    SELECTEDVALUE(glossario[LeituraDescida])
+			
+			VAR _subi = 
+			    SELECTEDVALUE(glossario[LeituraSubida])
+			
+			RETURN
+			
+			    " ↑ " & _subi & "  |  ↓ " & _desc & "."
+			```
+		displayFolder: Glossário
+		lineageTag: 9d0292e8-44b8-4dd9-a898-107d1efbdc56
+
+		changedProperty = IsHidden
+
+	measure 'Glossario Status' =
+			
+			SELECTEDVALUE(glossario[Status])
+		displayFolder: Glossário
+		lineageTag: 7b4286f1-156c-4762-a0ea-fef9297b449a
+
+		changedProperty = IsHidden
+
+	measure 'Glossario Unidade' =
+			
+			SELECTEDVALUE(glossario[Unidade])
+		displayFolder: Glossário
+		lineageTag: 3ddcc492-c0a3-4544-a89b-7a777ebcbccf
+
+		changedProperty = IsHidden
+
+	measure 'Últ. Atualização' =
+			
+			
+			MAX(excelencias[DT_PROCESSAMENTO])
+		formatString: Short Date
+		displayFolder: Formatação
+		lineageTag: 8885ac6c-3e41-4f20-8c03-889839829b69
+
+		changedProperty = IsHidden
+
+	measure 'Cor (background)' = ```
+			
+			VAR _ordem =
+			    SELECTEDVALUE(parametro_metricas[parametro_meta Order])
+			
+			VAR _Valor =
+			    SWITCH(
+			        _ordem,
+			        0,  [Total de Escolas],
+			        1,  [Qtd. de alunos projetados no EM Noturno],
+			        2,  [Qtd. de alunos projetados no PEI],
+			        3,  [Qtd. de salas de aula nas escolas existentes],
+			        4,  [% matrículas pendentes],
+			        5,  [Demanda e coleta: qualidade do enturmamento],
+			        6,  [Rendimento: turmas lançadas dentro do prazo],
+			        7,  [Fechamento: turmas lançadas dentro do prazo],
+			        8,  [Bolsa Família: % de não informados],
+			        9,  [Censo Escolar: % de divergências na matrícula],
+			        10, [Censo Escolar: % de divergência na taxa de aprovação],
+			        11, [Cadastro de Escolas: % de cadastros inválidos],
+			        12, [Cadastro de Alunos: % de cadastros inválidos]
+			    )
+			    
+			VAR _Tipo =
+			    LOOKUPVALUE(
+			        'Regras Indicadores'[Tipo],
+			        'Regras Indicadores'[Indicador], _ordem
+			    )
+			
+			VAR _Meta =
+			    SWITCH(
+			        _ordem,
+			        0,  SELECTEDVALUE(excelencia_objetivo[escolas]),
+			        1,  SELECTEDVALUE(excelencia_objetivo[alunos_noturnos]),
+			        2,  SELECTEDVALUE(excelencia_objetivo[alunos_pei]),
+			        3,  SELECTEDVALUE(excelencia_objetivo[salas_aula]),
+			        4,  SELECTEDVALUE(excelencia_objetivo[alunos_pendentes]),
+			        5,  SELECTEDVALUE(excelencia_objetivo[qualidade_entur]),
+			        6,  SELECTEDVALUE(excelencia_objetivo[rendimento]),
+			        7,  SELECTEDVALUE(excelencia_objetivo[fechamento]),
+			        8,  SELECTEDVALUE(excelencia_objetivo[bolsa_percent_nao_informado]),
+			        9,  SELECTEDVALUE(excelencia_objetivo[diverg_matricula]),
+			        10, SELECTEDVALUE(excelencia_objetivo[diverg_rendimento]),
+			        11, SELECTEDVALUE(excelencia_objetivo[cadastro_escola]),
+			        12, SELECTEDVALUE(excelencia_objetivo[cadastro_aluno])
+			    )
+			
+			VAR _Atingimento =
+			    SWITCH(
+			        TRUE(),
+			        _Tipo = "MAIOR", DIVIDE(_Valor, _Meta),
+			        _Tipo = "MENOR", DIVIDE(_Meta, _Valor)
+			    )
+			
+			RETURN
+			    IF(
+			        ISINSCOPE(excelencias[NM_ESCOLA]),
+			        BLANK(),
+			        SWITCH(
+			            TRUE(),
+			            ISBLANK(_Valor) || ISBLANK(_Meta), BLANK(),
+			            _Atingimento >= 1,   "#E7F4E5",
+			            _Atingimento >= 0.6, "#FDFCD9",
+			            "#F1DEDC"
+			        )
+			    )
+			```
+		displayFolder: Formatação\Cores
+		lineageTag: 5abec436-8817-4fbd-bec2-54f55b4fb74b
+
+		changedProperty = IsHidden
+
+	measure '_Debug _Tipo' = ```
+			LOOKUPVALUE('Regras Indicadores'[Tipo], 'Regras Indicadores'[Indicador], [_Debug _ordem])
+			
+			```
+		displayFolder: Formatação\Cores
+		lineageTag: a95dc68c-87c1-4e99-9e9b-1270f5d6ef28
+
+		changedProperty = IsHidden
+
+	measure 'Debug Combinado' =
+			
+			VAR _ordem = SELECTEDVALUE(parametro_metricas[parametro_meta Order])
+			VAR _Valor = SELECTEDVALUE(parametro_metricas[parametro_meta Fields])
+			VAR _Tipo  = LOOKUPVALUE('Regras Indicadores'[Tipo], 'Regras Indicadores'[Indicador], _ordem)
+			VAR _Meta  =
+			    SWITCH(
+			        _ordem,
+			        0,  SELECTEDVALUE(excelencia_objetivo[escolas]),
+			        1,  SELECTEDVALUE(excelencia_objetivo[alunos_noturnos]),
+			        2,  SELECTEDVALUE(excelencia_objetivo[alunos_pei]),
+			        3,  SELECTEDVALUE(excelencia_objetivo[salas_aula]),
+			        4,  SELECTEDVALUE(excelencia_objetivo[alunos_pendentes]),
+			        5,  SELECTEDVALUE(excelencia_objetivo[qualidade_entur]),
+			        6,  SELECTEDVALUE(excelencia_objetivo[rendimento]),
+			        7,  SELECTEDVALUE(excelencia_objetivo[fechamento]),
+			        8,  SELECTEDVALUE(excelencia_objetivo[bolsa_percent_nao_informado]),
+			        9,  SELECTEDVALUE(excelencia_objetivo[diverg_matricula]),
+			        10, SELECTEDVALUE(excelencia_objetivo[diverg_rendimento]),
+			        11, SELECTEDVALUE(excelencia_objetivo[cadastro_escola]),
+			        12, SELECTEDVALUE(excelencia_objetivo[cadastro_aluno])
+			    )
+			RETURN
+			    "ordem=" & _ordem &
+			    " | valor=" & FORMAT(_Valor, "0.00") &
+			    " | tipo=" & _Tipo &
+			    " | meta=" & FORMAT(_Meta, "0.00")
+		displayFolder: Formatação\Cores
+		lineageTag: 470324e3-e328-4df6-8982-a6717643e64f
+
+		changedProperty = IsHidden
+
+	measure '_Debug _ordem' = ```
+			SELECTEDVALUE(parametro_metricas[parametro_meta Order])
+			
+			```
+		formatString: 0
+		displayFolder: Formatação\Cores
+		lineageTag: 7f9ea445-6417-45f7-ab6f-6971ae618241
+
+		changedProperty = IsHidden
+
+	measure '_Debug _Valor' = SELECTEDVALUE(parametro_metricas[parametro_meta Fields])
+		displayFolder: Formatação\Cores
+		lineageTag: 356aa357-1ea6-4f1a-bb16-eac059321079
+
+		changedProperty = IsHidden
+
+	measure 'tt_Total de Escolas' = ```
+			
+			VAR _val = 
+			CALCULATE(
+			    SUM(excelencias[Escolas]),
+			    ALLEXCEPT(excelencias, excelencias[DIRETORIA_NM_DIRETORIA])
+			)
+			
+			RETURN
+			
+			"Escolas: " & FORMAT(_val, "#,##0")
+			```
+		lineageTag: b5a2e9da-9f9f-4c55-a712-c4a02f65f9e1
+
+	measure 'tt_Total de Municipios' = ```
+			
+			VAR _mun = 
+			CALCULATE(
+			    DISTINCTCOUNT(excelencias[NM_MUNICIPIO]),
+			    ALLEXCEPT(excelencias, excelencias[DIRETORIA_NM_DIRETORIA])
+			)
+			
+			RETURN
+			
+			"Municípios: " & _mun
+			```
+		lineageTag: b09ed4a3-bd81-457c-8967-f4dedfa40e65
+
+	measure tt_Cor_Destaque_Cartao = ```
+			
+			VAR _ordem =
+			    SELECTEDVALUE(parametro_metricas[parametro_meta Order])
+			
+			VAR _valor =
+			    SWITCH(
+			        _ordem,
+			        0,  SELECTEDVALUE(excelencia_objetivo[escolas]),
+			        1,  SELECTEDVALUE(excelencia_objetivo[alunos_noturnos]),
+			        2,  SELECTEDVALUE(excelencia_objetivo[alunos_pei]),
+			        3,  SELECTEDVALUE(excelencia_objetivo[salas_aula]),
+			        4,  SELECTEDVALUE(excelencia_objetivo[alunos_pendentes]),
+			        5,  SELECTEDVALUE(excelencia_objetivo[qualidade_entur]),
+			        6,  SELECTEDVALUE(excelencia_objetivo[rendimento]),
+			        7,  SELECTEDVALUE(excelencia_objetivo[fechamento]),
+			        8,  SELECTEDVALUE(excelencia_objetivo[bolsa_percent_nao_informado]),
+			        9,  SELECTEDVALUE(excelencia_objetivo[diverg_matricula]),
+			        10, SELECTEDVALUE(excelencia_objetivo[diverg_rendimento]),
+			        11, SELECTEDVALUE(excelencia_objetivo[cadastro_escola]),
+			        12, SELECTEDVALUE(excelencia_objetivo[cadastro_aluno])
+			    )
+			/* VAR MetricaAtual = 
+			
+			    SWITCH(
+			        TRUE(),
+			        [Total de Escolas],                                          SELECTEDVALUE(excelencia_objetivo[escolas]),
+			        [Qtd. de alunos projetados no EM Noturno],                    SELECTEDVALUE(excelencia_objetivo[alunos_noturnos]),
+			        [Qtd. de alunos projetados no PEI],                           SELECTEDVALUE(excelencia_objetivo[alunos_pei]),
+			        [Qtd. de salas de aula nas escolas existentes],               SELECTEDVALUE(excelencia_objetivo[salas_aula]),
+			        [% matrículas pendentes],                                     SELECTEDVALUE(excelencia_objetivo[alunos_pendentes]),
+			        [Demanda e coleta: qualidade do enturmamento],                SELECTEDVALUE(excelencia_objetivo[qualidade_entur]),
+			        [Rendimento: turmas lançadas dentro do prazo],                SELECTEDVALUE(excelencia_objetivo[rendimento]),
+			        [Fechamento: turmas lançadas dentro do prazo],                SELECTEDVALUE(excelencia_objetivo[fechamento]),
+			        [Bolsa Família: % de não informados],                         SELECTEDVALUE(excelencia_objetivo[bolsa_percent_nao_informado]),
+			        [Censo Escolar: % de divergências na matrícula],              SELECTEDVALUE(excelencia_objetivo[diverg_matricula]),
+			        [Censo Escolar: % de divergência na taxa de aprovação],       SELECTEDVALUE(excelencia_objetivo[diverg_rendimento]),
+			        [Cadastro de Escolas: % de cadastros inválidos],              SELECTEDVALUE(excelencia_objetivo[cadastro_escola]),
+			        [Cadastro de Alunos: % de cadastros inválidos],                SELECTEDVALUE(excelencia_objetivo[cadastro_aluno])
+			    )
+			
+			 */
+			 RETURN
+			IF(
+			    ISBLANK(_valor),
+			    "#FFFFFF",
+			    "#FFD700"   
+			)
+			```
+		displayFolder: Formatação\Cores
+		lineageTag: 9e26697c-935f-46c4-81c5-8104b11d5737
+
+	measure tt_Ordem_Atual =
+			
+			SELECTEDVALUE(parametro_metricas[parametro_meta Order])
+		formatString: 0
+		displayFolder: Formatação\Cores
+		lineageTag: 5a0f09ad-3fc1-43c0-81fe-20c71600f36c
+
+	measure 'Glossario - Cor Indicador (background)' =
+			
+			IF (
+			    SELECTEDVALUE ( glossario[Categoria] ) = "Indicador",
+			    "#FDFCD9",
+			    "#FFFFFF"
+			)
+		displayFolder: Glossário
+		lineageTag: 4e521133-3b69-44e6-933c-cc27bace63f0
+
+	partition _measures = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

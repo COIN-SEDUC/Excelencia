@@ -1,0 +1,45 @@
+table d_organizacao_tabela
+	lineageTag: aaebd25d-3034-4df9-970a-808ce5726df2
+
+	column Categoria
+		dataType: string
+		lineageTag: b7c9c77c-e4c7-4128-b887-c5700d2ee2af
+		summarizeBy: none
+		sourceColumn: Categoria
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Indicador
+		dataType: string
+		lineageTag: f18b4f74-5f76-4960-befd-ca5e277d9fde
+		summarizeBy: none
+		sourceColumn: Indicador
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fórmula
+		dataType: string
+		lineageTag: 36990d6c-51b4-4271-8009-ebf2fb41783c
+		summarizeBy: none
+		sourceColumn: Fórmula
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition d_organizacao_tabela = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("xZTBbhMxEIZfZZQqUiMqyoVLboRmJQ5pS4W4VD0MtgtGtie1vVHUt0EcKpBy6iP4xRh7d5MNpFXaHjjZ6/m9/zf2jC8vB2dRW32L6S79JJAIF0oqmAZBBv3gaPAxytfAK2hqRwHmnr6riJKnjmA6g1OKtXfEyoNOwwHXrBaNC5qHWfolNcExrGWRIuqwHR9cHb2M6Hz6oY/Cn/9aPsUkoMFQ3GqD4HiuiobHpQ5RuahCMdwWtrkdqjBnC4LrtApa0KhYzzD6tBJZp+CzZvON7xDsOsq5KSc7iyrde5v3zL0yzO7QjzmzteSBPB8zO1EWncwBXuEzHMNNjYY1nIYk4N/W3qLlMd/v4QGUb05LjwCFtphVNt3L2hC8gl48C76gXlI+kbdvhj3hqIC2yj1BLzhJXTjG3U6DLt2hLGfuoqfsMPd421Tip0YkyLbCsjkXSNE8A6FS4hv+X4QJmYBQoU0ro/myhvlwXa5f7a6J/8Q9UKw3zTGpCgCXTFCZYVuOO9qR+SZVQXmvXOAigHOvhA6lTRSctCZNsGVrUaReKP81/XZCc1IOe6X8F1Zm6qu3xQ9U8ot4skPEJRYIfjIWbefvAbZr23MIc6WUKunemdByijYS+GIW6Qc3IE87sO65yWSdcKNrqogJTCd8Gsi7ksMjHDvOZz+Kqz8=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Categoria = _t, Indicador = _t, Fórmula = _t])
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

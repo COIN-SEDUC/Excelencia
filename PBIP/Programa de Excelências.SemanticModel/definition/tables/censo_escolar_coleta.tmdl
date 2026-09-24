@@ -1,0 +1,533 @@
+table censo_escolar_coleta
+	lineageTag: d4a9241d-d71a-4d42-98a8-6445f1c06f38
+
+	column cd_cie
+		dataType: int64
+		lineageTag: 751c33e2-3f4a-4722-9644-ffa96d1127c9
+		summarizeBy: none
+		sourceColumn: cd_cie
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column dt_referencia
+		dataType: dateTime
+		formatString: dd/mm/yyyy hh:mm:ss
+		lineageTag: ba771907-ddaf-4ea1-9ef6-3be46590be2a
+		summarizeBy: none
+		sourceColumn: dt_referencia
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_matriculas_curricular
+		dataType: int64
+		formatString: #,##0
+		lineageTag: b14e10c4-2cfd-4b75-82cf-dd7e9d1d1791
+		summarizeBy: sum
+		sourceColumn: total_matriculas_curricular
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column uf
+		dataType: string
+		lineageTag: c9e3670b-02f0-414c-bdd0-f5546f0f79f9
+		summarizeBy: none
+		sourceColumn: uf
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column orgao_regional
+		dataType: string
+		lineageTag: 11b5f636-24f6-49b4-a8d1-2910cb2e7cf3
+		summarizeBy: none
+		sourceColumn: orgao_regional
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column municipio
+		dataType: string
+		lineageTag: 48daa9de-54a3-4059-819c-cf7db4d65545
+		summarizeBy: none
+		sourceColumn: municipio
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column dependencia_administrativa
+		dataType: string
+		lineageTag: 8fc67843-5b0e-472b-a081-8177dfecc995
+		summarizeBy: none
+		sourceColumn: dependencia_administrativa
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column categoria_escola_privada
+		dataType: string
+		lineageTag: 741e170f-d2c0-499f-abda-3c03967cb7d6
+		summarizeBy: none
+		sourceColumn: categoria_escola_privada
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column poder_publico_parceria
+		dataType: string
+		lineageTag: 324bba5c-3bf0-4e51-96e8-75b392d49043
+		summarizeBy: none
+		sourceColumn: poder_publico_parceria
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column nm_escola
+		dataType: string
+		lineageTag: a01a9fb3-190f-4c76-82a7-55d1c809f4ff
+		summarizeBy: none
+		sourceColumn: nm_escola
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column telefone_escola
+		dataType: string
+		lineageTag: 45db025d-c8bf-4090-9836-2f0a9e8717f0
+		summarizeBy: none
+		sourceColumn: telefone_escola
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column email_escola
+		dataType: string
+		lineageTag: 95eed7de-143a-4078-89f2-673d9b605a85
+		summarizeBy: none
+		sourceColumn: email_escola
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column escola_nova
+		dataType: string
+		lineageTag: 970e27b4-eb4e-4279-8d0f-ed8c1d9fcf32
+		summarizeBy: none
+		sourceColumn: escola_nova
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column escola_indigena
+		dataType: string
+		lineageTag: 75e9c322-26db-4346-8641-cdd6dc1d3366
+		summarizeBy: none
+		sourceColumn: escola_indigena
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column situacao_funcionamento
+		dataType: string
+		lineageTag: c1de2546-d37d-43d3-ae94-a8f264b7b6bc
+		summarizeBy: none
+		sourceColumn: situacao_funcionamento
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column regulamentacao
+		dataType: string
+		lineageTag: 6180dde9-b22e-4ce8-97d2-5d72ba580e62
+		summarizeBy: none
+		sourceColumn: regulamentacao
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column localizacao
+		dataType: string
+		lineageTag: ea1e5122-aff5-4938-810e-97ee0e412301
+		summarizeBy: none
+		sourceColumn: localizacao
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column localizacao_diferenciada
+		dataType: string
+		lineageTag: a926e779-407c-4ec4-8fb7-d963538e77cb
+		summarizeBy: none
+		sourceColumn: localizacao_diferenciada
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column orgao_vinculado
+		dataType: string
+		lineageTag: ecede2a7-1827-418e-94a0-43e95783c46e
+		summarizeBy: none
+		sourceColumn: orgao_vinculado
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column alimentacao_escolar
+		dataType: string
+		lineageTag: 74a86469-697f-4c27-96b9-db7030d3bdc9
+		summarizeBy: none
+		sourceColumn: alimentacao_escolar
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column situacao_fechamento
+		dataType: string
+		lineageTag: cd462d5c-779a-4651-8230-e09484483f4f
+		summarizeBy: none
+		sourceColumn: situacao_fechamento
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column forma_coleta
+		dataType: string
+		lineageTag: 223d130a-5b2e-4be8-bd5c-54b42ce8c1d1
+		summarizeBy: none
+		sourceColumn: forma_coleta
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column escola_bloqueada
+		dataType: string
+		lineageTag: b654ee9d-c66c-4cd9-aead-9b40a6a06a53
+		summarizeBy: none
+		sourceColumn: escola_bloqueada
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column gestor_escolar
+		dataType: string
+		lineageTag: 78c73c07-2ed8-4c6a-9ab0-2ec3d936205a
+		summarizeBy: none
+		sourceColumn: gestor_escolar
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column mat_confirmar_desconsiderar
+		dataType: int64
+		formatString: 0
+		lineageTag: cd9ce849-f580-47f8-8490-77f822f5c7ee
+		summarizeBy: sum
+		sourceColumn: mat_confirmar_desconsiderar
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_matriculas_aee
+		dataType: int64
+		formatString: 0
+		lineageTag: 3747c06e-9eaa-4d2e-b139-16f8372fcd00
+		summarizeBy: sum
+		sourceColumn: total_matriculas_aee
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_matriculas_atividade_complementar
+		dataType: int64
+		formatString: 0
+		lineageTag: dfde9bdc-01e0-436c-93b7-780bd9b39645
+		summarizeBy: sum
+		sourceColumn: total_matriculas_atividade_complementar
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_matriculas_curricular_com_atividade_complementar
+		dataType: int64
+		formatString: 0
+		lineageTag: fa6587ab-d021-401f-a634-0bd587732331
+		summarizeBy: sum
+		sourceColumn: total_matriculas_curricular_com_atividade_complementar
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column mat_presencial_creche
+		dataType: int64
+		formatString: 0
+		lineageTag: c2fcb206-aa87-4f48-a4d8-32c07a35b619
+		summarizeBy: sum
+		sourceColumn: mat_presencial_creche
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column mat_presencial_pre_escola
+		dataType: int64
+		formatString: 0
+		lineageTag: 112cf6e5-91f5-44e4-ba75-0996b2d27163
+		summarizeBy: sum
+		sourceColumn: mat_presencial_pre_escola
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column mat_presencial_ensino_fundamental_anos_iniciais
+		dataType: int64
+		formatString: 0
+		lineageTag: 0308485c-684d-4d5a-bfd7-ef3691be6cb3
+		summarizeBy: sum
+		sourceColumn: mat_presencial_ensino_fundamental_anos_iniciais
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column mat_presencial_ensino_fundamental_anos_finais
+		dataType: int64
+		formatString: 0
+		lineageTag: 20fbf496-53be-4ced-b714-8cbb58d6a958
+		summarizeBy: sum
+		sourceColumn: mat_presencial_ensino_fundamental_anos_finais
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column mat_presencial_ensino_medio
+		dataType: int64
+		formatString: 0
+		lineageTag: cccf4ce0-791b-459d-be12-ee6f8ba4416f
+		summarizeBy: sum
+		sourceColumn: mat_presencial_ensino_medio
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column mat_presencial_ensino_medio_normal_magisterio
+		dataType: int64
+		formatString: 0
+		lineageTag: 05fda50f-5cca-49b1-bca3-18529dcfff08
+		summarizeBy: sum
+		sourceColumn: mat_presencial_ensino_medio_normal_magisterio
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column mat_presencial_curso_tecnico_concomitante_subsequente
+		dataType: int64
+		formatString: 0
+		lineageTag: d52809de-41f0-4562-87b3-9ac2c5de2863
+		summarizeBy: sum
+		sourceColumn: mat_presencial_curso_tecnico_concomitante_subsequente
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column mat_presencial_eja_fundamental_e_fic_integrado
+		dataType: int64
+		formatString: 0
+		lineageTag: 77a4cfbc-6948-490f-9431-dc5536e8d5d1
+		summarizeBy: sum
+		sourceColumn: mat_presencial_eja_fundamental_e_fic_integrado
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column mat_presencial_eja_medio_fic_integrado_e_tecnico_integrado
+		dataType: int64
+		formatString: 0
+		lineageTag: 59e2a8ee-0ef6-44bf-b3d1-053f6b9d84f0
+		summarizeBy: sum
+		sourceColumn: mat_presencial_eja_medio_fic_integrado_e_tecnico_integrado
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column mat_presencial_qualificacao_profissional_curso_fic_concomitante_nao_vinculada
+		dataType: int64
+		formatString: 0
+		lineageTag: 3e35de9e-049e-4511-b717-4a15ac57c119
+		summarizeBy: sum
+		sourceColumn: mat_presencial_qualificacao_profissional_curso_fic_concomitante_nao_vinculada
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column mat_presencial_fgb_ifa_e_ou_iftp
+		dataType: int64
+		formatString: 0
+		lineageTag: 96f62bd6-8426-473d-9184-f07c415806e4
+		summarizeBy: sum
+		sourceColumn: mat_presencial_fgb_ifa_e_ou_iftp
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column mat_presencial_ifa_e_ou_iftp_turma_exclusiva
+		dataType: int64
+		formatString: 0
+		lineageTag: c054f8d5-a7d6-4d96-a4b8-3151abe2cfd0
+		summarizeBy: sum
+		sourceColumn: mat_presencial_ifa_e_ou_iftp_turma_exclusiva
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column mat_semipresencial_eja_curricular
+		dataType: int64
+		formatString: 0
+		lineageTag: 1bf27444-d28f-4f9f-a2a4-762e9b18c2c2
+		summarizeBy: sum
+		sourceColumn: mat_semipresencial_eja_curricular
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column mat_ead_educacao_profissional_tecnica_de_nivel_medio_concomitante_subsequente
+		dataType: int64
+		formatString: 0
+		lineageTag: 6a19400c-3d22-4095-88bb-d1041f323c00
+		summarizeBy: sum
+		sourceColumn: mat_ead_educacao_profissional_tecnica_de_nivel_medio_concomitante_subsequente
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column mat_ead_eja_fundamental
+		dataType: int64
+		formatString: 0
+		lineageTag: 972fed04-30f7-4e36-ac59-9624a1c3903f
+		summarizeBy: sum
+		sourceColumn: mat_ead_eja_fundamental
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column mat_ead_eja_medio
+		dataType: int64
+		formatString: 0
+		lineageTag: e1333865-42ac-40f5-bd6f-d90d80c39152
+		summarizeBy: sum
+		sourceColumn: mat_ead_eja_medio
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column mat_ead_qualificacao_profissional_curso_fic_concomitante_nao_vinculada
+		dataType: int64
+		formatString: 0
+		lineageTag: 3b479ba7-5ff2-4ad5-ac35-d4a5acb8f908
+		summarizeBy: sum
+		sourceColumn: mat_ead_qualificacao_profissional_curso_fic_concomitante_nao_vinculada
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column mat_ead_ifa_e_ou_iftp_turma_exclusiva
+		dataType: int64
+		formatString: 0
+		lineageTag: 73e42f68-312c-4201-9e28-8071e908c916
+		summarizeBy: sum
+		sourceColumn: mat_ead_ifa_e_ou_iftp_turma_exclusiva
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column cd_escola_inep
+		dataType: int64
+		formatString: 0
+		lineageTag: fa3110de-c9cf-48a5-a17f-22175ddb257c
+		summarizeBy: sum
+		sourceColumn: cd_escola_inep
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Data
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 4b2110a9-3516-47c4-b616-841397eee630
+		summarizeBy: none
+		sourceColumn: Data
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition censo_escolar_coleta = m
+		mode: import
+		queryGroup: 'Databricks connector'
+		source =
+				let
+				    Source = DatabricksMultiCloud.Catalogs(server_hostname, HTTP_path, [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0"]),
+				    citem_Database = Source{[Name="citem",Kind="Database"]}[Data],
+				    sandbox_Schema = citem_Database{[Name="sandbox",Kind="Schema"]}[Data],
+				    censo_Table = sandbox_Schema{[Name="TB_CENSO_ESCOLAR_COLETA_HISTORICO",Kind="Table"]}[Data],
+				    #"Selected Columns" = Table.SelectColumns(censo_Table,{"dt_referencia", "uf", "orgao_regional", "municipio", "dependencia_administrativa", "categoria_escola_privada", "poder_publico_parceria", "nm_escola", "telefone_escola", "email_escola", "escola_nova", "escola_indigena", "situacao_funcionamento", "regulamentacao", "localizacao", "localizacao_diferenciada", "orgao_vinculado", "alimentacao_escolar", "situacao_fechamento", "forma_coleta", "escola_bloqueada", "gestor_escolar", "mat_confirmar_desconsiderar", "total_matriculas_curricular", "total_matriculas_aee", "total_matriculas_atividade_complementar", "total_matriculas_curricular_com_atividade_complementar", "mat_presencial_creche", "mat_presencial_pre_escola", "mat_presencial_ensino_fundamental_anos_iniciais", "mat_presencial_ensino_fundamental_anos_finais", "mat_presencial_ensino_medio", "mat_presencial_ensino_medio_normal_magisterio", "mat_presencial_curso_tecnico_concomitante_subsequente", "mat_presencial_eja_fundamental_e_fic_integrado", "mat_presencial_eja_medio_fic_integrado_e_tecnico_integrado", "mat_presencial_qualificacao_profissional_curso_fic_concomitante_nao_vinculada", "mat_presencial_fgb_ifa_e_ou_iftp", "mat_presencial_ifa_e_ou_iftp_turma_exclusiva", "mat_semipresencial_eja_curricular", "mat_ead_educacao_profissional_tecnica_de_nivel_medio_concomitante_subsequente", "mat_ead_eja_fundamental", "mat_ead_eja_medio", "mat_ead_qualificacao_profissional_curso_fic_concomitante_nao_vinculada", "mat_ead_ifa_e_ou_iftp_turma_exclusiva", "cd_escola_inep", "cd_cie"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Selected Columns", {{"cd_cie", Int64.Type}, {"dt_referencia", type datetime}, {"total_matriculas_curricular", Int64.Type}}),
+				    ReferenceDates = List.RemoveNulls(#"Changed Type"[dt_referencia]),
+				    LatestReference = if List.IsEmpty(ReferenceDates) then null else List.Max(ReferenceDates),
+				    #"Filtered Latest Reference" = if LatestReference = null then Table.FirstN(#"Changed Type", 0) else Table.SelectRows(#"Changed Type", each [dt_referencia] = LatestReference),
+				    #"Data Inserida" = Table.AddColumn(#"Filtered Latest Reference", "Data", each DateTime.Date([dt_referencia]), type date)
+				in
+				    #"Data Inserida"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

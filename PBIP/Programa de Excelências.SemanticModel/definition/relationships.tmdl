@@ -1,0 +1,5 @@
+relationship 578aa8f2-5fec-8612-1fb7-144e561e7ff5
+	crossFilteringBehavior: bothDirections
+	fromColumn: excelencias.DIRETORIA_NM_DIRETORIA
+	toColumn: excelencia_objetivo.diretoria
+

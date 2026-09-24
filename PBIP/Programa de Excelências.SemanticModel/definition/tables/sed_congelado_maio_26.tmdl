@@ -1,0 +1,195 @@
+table sed_congelado_maio_26
+	lineageTag: 677b7222-8c3b-4657-85ee-608cda9ca05f
+
+	column total_matriculas
+		dataType: int64
+		formatString: #,##0
+		lineageTag: 0ac6517b-14dd-49cc-94b0-c1f17fef2678
+		summarizeBy: sum
+		sourceColumn: total_matriculas
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COD_ESC
+		dataType: int64
+		formatString: 0
+		lineageTag: 15ebc10d-cabb-4a52-8b7d-4cd2101bbdc3
+		summarizeBy: none
+		sourceColumn: COD_ESC
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ANO_MES
+		dataType: string
+		lineageTag: 04da1ea3-74e3-461f-ade2-902e12c9f240
+		summarizeBy: none
+		sourceColumn: ANO_MES
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_turmas
+		dataType: int64
+		formatString: 0
+		lineageTag: 71a3a849-47af-4ffe-a071-c505b3bc597a
+		summarizeBy: sum
+		sourceColumn: total_turmas
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ed_infantil
+		dataType: int64
+		formatString: 0
+		lineageTag: 348b42bc-3542-4f0a-8b7a-a4c62b55ac59
+		summarizeBy: sum
+		sourceColumn: ed_infantil
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column fund_ai
+		dataType: int64
+		formatString: 0
+		lineageTag: d67b195e-72a4-4008-9471-825761fc2a50
+		summarizeBy: sum
+		sourceColumn: fund_ai
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column fund_af
+		dataType: int64
+		formatString: 0
+		lineageTag: eef2b966-b902-431b-a34a-7c36bca5eb18
+		summarizeBy: sum
+		sourceColumn: fund_af
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ensino_medio
+		dataType: int64
+		formatString: 0
+		lineageTag: a5aa8dda-bdb1-4818-863f-22f987524017
+		summarizeBy: sum
+		sourceColumn: ensino_medio
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column eja_total
+		dataType: int64
+		formatString: 0
+		lineageTag: 51e2ed0a-5608-4047-a56f-1a5f6097a9ff
+		summarizeBy: sum
+		sourceColumn: eja_total
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ceeja_ai
+		dataType: int64
+		formatString: 0
+		lineageTag: 9e7780a6-5583-4699-adc4-67b68cb2cdc9
+		summarizeBy: sum
+		sourceColumn: ceeja_ai
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ceeja_af
+		dataType: int64
+		formatString: 0
+		lineageTag: 8dad1319-17ae-4b77-bef5-7407abb78748
+		summarizeBy: sum
+		sourceColumn: ceeja_af
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ceeja_em
+		dataType: int64
+		formatString: 0
+		lineageTag: 12bc01d8-0e39-452e-af5f-3b9f32fdf2e6
+		summarizeBy: sum
+		sourceColumn: ceeja_em
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column eja_ai
+		dataType: int64
+		formatString: 0
+		lineageTag: d52f1b1d-238c-4864-833c-84b06f22f78c
+		summarizeBy: sum
+		sourceColumn: eja_ai
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column eja_af
+		dataType: int64
+		formatString: 0
+		lineageTag: 7fae1b81-eb6d-4d35-b87b-71d597853732
+		summarizeBy: sum
+		sourceColumn: eja_af
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column eja_em
+		dataType: int64
+		formatString: 0
+		lineageTag: eb663646-78b2-4c87-813f-747943bc5c78
+		summarizeBy: sum
+		sourceColumn: eja_em
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column profissionalizante
+		dataType: int64
+		formatString: 0
+		lineageTag: 6f1f893d-7263-4d98-ba57-4a0dd2a6cc7e
+		summarizeBy: sum
+		sourceColumn: profissionalizante
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition sed_congelado_maio_26 = m
+		mode: import
+		queryGroup: 'Databricks connector'
+		source =
+				let
+				    Source = DatabricksMultiCloud.Catalogs(server_hostname, HTTP_path, [Catalog=null, Database=null, QueryTags=null, EnableAutomaticProxyDiscovery=null, Implementation="2.0"]),
+				    citem_Database = Source{[Name="citem",Kind="Database"]}[Data],
+				    sandbox_Schema = citem_Database{[Name="sandbox",Kind="Schema"]}[Data],
+				    sed_Table = sandbox_Schema{[Name="sed_congelado_maio_26",Kind="Table"]}[Data],
+				    #"Selected Columns" = Table.SelectColumns(sed_Table,{"COD_ESC", "ANO_MES", "total_turmas", "total_matriculas", "ed_infantil", "fund_ai", "fund_af", "ensino_medio", "eja_total", "ceeja_ai", "ceeja_af", "ceeja_em", "eja_ai", "eja_af", "eja_em", "profissionalizante"})
+				in
+				    #"Selected Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
