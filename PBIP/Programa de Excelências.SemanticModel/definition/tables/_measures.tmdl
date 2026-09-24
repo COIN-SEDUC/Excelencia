@@ -12,7 +12,7 @@ table _measures
 			        _02,
 			        BLANK()
 			    )
-		formatString: 0.00%;-0.00%;0.00%
+		formatString: 0.0%;-0.0%;0.0%
 		displayFolder: Métricas\Otimização da Rede Escolar
 		lineageTag: 5e7925c3-e1a2-4adc-80e7-5f6a87dc5ae5
 
@@ -29,7 +29,7 @@ table _measures
 			    _02,
 			    BLANK()
 			)
-		formatString: 0.00%;-0.00%;0.00%
+		formatString: 0.0%;-0.0%;0.0%
 		displayFolder: Métricas\Otimização da Rede Escolar
 		lineageTag: 48a92e81-9ec9-4535-a221-59216addf636
 
@@ -60,7 +60,7 @@ table _measures
 			)
 			
 			```
-		formatString: 0.00%;-0.00%;0.00%
+		formatString: 0.0%;-0.0%;0.0%
 		displayFolder: Métricas\Matrícula e Vida Escolar
 		lineageTag: 733d911e-65cc-46ba-aca7-6c328a8eeef8
 
@@ -82,7 +82,7 @@ table _measures
 			    )
 			
 			```
-		formatString: 0.00%;-0.00%;0.00%
+		formatString: 0.0%;-0.0%;0.0%
 		displayFolder: Métricas\Matrícula e Vida Escolar
 		lineageTag: 103eace6-5356-42ee-bcc4-3757348b8a6f
 
@@ -101,7 +101,7 @@ table _measures
 			)
 			
 			```
-		formatString: 0.00%;-0.00%;0.00%
+		formatString: 0.0%;-0.0%;0.0%
 		displayFolder: Métricas\Matrícula e Vida Escolar
 		lineageTag: 758646a3-359d-45b3-82f7-62c891e663b6
 
@@ -120,7 +120,7 @@ table _measures
 			)
 			
 			```
-		formatString: 0.00%;-0.00%;0.00%
+		formatString: 0.0%;-0.0%;0.0%
 		displayFolder: Métricas\Matrícula e Vida Escolar
 		lineageTag: c17485d0-c421-45bc-91f7-35e4780d9387
 
@@ -138,13 +138,11 @@ table _measures
 			    0
 			)
 			```
-		formatString: 0.00%;-0.00%;0.00%
+		formatString: 0.0%;-0.0%;0.0%
 		displayFolder: Métricas\Matrícula e Vida Escolar
 		lineageTag: b0a2dd8c-9037-454a-977c-24837929a885
 
 		changedProperty = IsHidden
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Censo Escolar: % de divergências na matrícula' = ```
 			
@@ -200,13 +198,11 @@ table _measures
 			    )
 			) */
 			```
-		formatString: 0.00%;-0.00%;0.00%
+		formatString: 0.0%;-0.0%;0.0%
 		displayFolder: Métricas\Censo e Precisão de Dados
 		lineageTag: 676db2c3-a06c-41d4-9b0d-f393c620149d
 
 		changedProperty = IsHidden
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Censo Escolar: % de divergência na taxa de aprovação' = ```
 			
@@ -217,17 +213,15 @@ table _measures
 			DIVIDE(
 			    _01,
 			    _02,
-			    0
+			    "--"
 			)
 			
 			```
-		formatString: 0.00%;-0.00%;0.00%
+		formatString: 0.0%;-0.0%;0.0%
 		displayFolder: Métricas\Censo e Precisão de Dados
 		lineageTag: 3583834c-a4e8-46ee-a757-6ccfbd7c7d4d
 
 		changedProperty = IsHidden
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Cadastro de Escolas: % de cadastros inválidos' = ```
 			
@@ -238,17 +232,15 @@ table _measures
 			DIVIDE(
 			    _01,
 			    _02,
-			    0
+			    "--"
 			)
 			
 			```
-		formatString: 0.00%;-0.00%;0.00%
+		formatString: 0.0%;-0.0%;0.0%
 		displayFolder: Métricas\Censo e Precisão de Dados
 		lineageTag: f36946bb-19e9-46b2-a283-f7354fe25823
 
 		changedProperty = IsHidden
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Cadastro de Alunos: % de cadastros inválidos' = ```
 			
@@ -259,17 +251,15 @@ table _measures
 			DIVIDE(
 			    _01,
 			    _02,
-			    0
+			    "--"
 			)
 			
 			```
-		formatString: 0.00%;-0.00%;0.00%
+		formatString: 0.0%;-0.0%;0.0%
 		displayFolder: Métricas\Censo e Precisão de Dados
 		lineageTag: aab1f88e-283c-449e-a43c-cb4696208244
 
 		changedProperty = IsHidden
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Total de Escolas' =
 			
