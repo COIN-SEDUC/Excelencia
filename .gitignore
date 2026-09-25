@@ -1,0 +1,19 @@
+# Cache do modelo semântico (binário, gerado localmente, não deve ir pro repo)
+*.SemanticModel/.pbi/cache.abf
+**/.pbi/cache.abf
+
+# Configurações locais do Desktop (específicas da máquina/usuário)
+*.pbi/localSettings.json
+**/.pbi/localSettings.json
+
+# Configurações de segurança/credenciais (podem conter dados sensíveis de conexão)
+**/SecurityBindings.json
+
+# Arquivos temporários do Power BI Desktop
+~$*.pbip
+*.tmp
+
+# Se você mantiver o .pbit/.pbix originais fora do controle de versão
+# (opcional — só descomente se não quiser versionar os binários)
+# *.pbix
+# *.pbit
