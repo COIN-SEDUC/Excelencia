@@ -376,6 +376,14 @@ table excelencias
 
 		annotation SummarizationSetBy = Automatic
 
+	column ANO_MES
+		dataType: string
+		lineageTag: 2d33ae6d-f908-41ca-a238-1245cff364da
+		summarizeBy: none
+		sourceColumn: ANO_MES
+
+		annotation SummarizationSetBy = Automatic
+
 	partition excelencias = m
 		mode: import
 		queryGroup: 'Databricks connector'
