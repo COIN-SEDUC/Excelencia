@@ -1,4 +1,5 @@
 -- Databricks notebook source
+-- Databricks notebook source
 -- DBTITLE 1,Criar tabela a partir de Excel
 CREATE OR REPLACE TABLE citem.power_bi.excelencia_glossario AS
 WITH raw AS (

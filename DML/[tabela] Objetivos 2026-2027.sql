@@ -1,4 +1,5 @@
 -- Databricks notebook source
+-- Databricks notebook source
 -- DBTITLE 1,⚠️ AVISO — Não modificar sem autorização
 -- MAGIC %md
 -- MAGIC ## ⚠️ ATENÇÃO — Notebook em produção
