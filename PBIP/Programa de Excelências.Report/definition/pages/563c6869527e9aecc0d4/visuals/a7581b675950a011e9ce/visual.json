@@ -29,11 +29,75 @@
               "queryRef": "excelencias.NM_ESCOLA + CD_ESCOLA",
               "nativeQueryRef": "NM_ESCOLA + CD_ESCOLA",
               "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "excelencias"
+                    }
+                  },
+                  "Property": "ESCOLA_CD_ESCOLA"
+                }
+              },
+              "queryRef": "excelencias.ESCOLA_CD_ESCOLA",
+              "nativeQueryRef": "ESCOLA_CD_ESCOLA",
+              "active": true
             }
           ]
         }
       }
     },
+    "expansionStates": [
+      {
+        "roles": [
+          "Values"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "excelencias.NM_ESCOLA + CD_ESCOLA"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "excelencias"
+                    }
+                  },
+                  "Property": "NM_ESCOLA + CD_ESCOLA"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "excelencias.ESCOLA_CD_ESCOLA"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "' ANTONIA FAGNOLI FURLAN- EMEFEI (4384)'"
+                  }
+                }
+              ],
+              "isToggled": true
+            }
+          ]
+        }
+      }
+    ],
     "objects": {
       "data": [
         {
@@ -50,7 +114,15 @@
       ],
       "general": [
         {
-          "properties": {}
+          "properties": {
+            "selfFilterEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
         }
       ],
       "selection": [

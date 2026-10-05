@@ -1586,7 +1586,7 @@ table _measures
 			
 			VAR _mun = 
 			CALCULATE(
-			    DISTINCTCOUNT(excelencias[NM_MUNICIPIO]),
+			    DISTINCTCOUNTNOBLANK(excelencias[NM_MUNICIPIO]),
 			    ALLEXCEPT(excelencias, excelencias[DIRETORIA_NM_DIRETORIA])
 			)
 			

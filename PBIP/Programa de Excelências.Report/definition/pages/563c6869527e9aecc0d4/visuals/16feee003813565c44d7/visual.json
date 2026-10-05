@@ -296,6 +296,18 @@
               "excelencias.NM_ESCOLA + CD_ESCOLA"
             ],
             "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "excelencias"
+                    }
+                  },
+                  "Property": "NM_ESCOLA + CD_ESCOLA"
+                }
+              }
+            ],
             "isPinned": true
           }
         ],
