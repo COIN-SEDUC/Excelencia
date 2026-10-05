@@ -219,13 +219,14 @@ table excelencias
 		annotation SummarizationSetBy = Automatic
 
 	column ESCOLA_CD_ESCOLA
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: 16b1f2d9-6370-4a1c-8584-67f9c600cef1
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: ESCOLA_CD_ESCOLA
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 

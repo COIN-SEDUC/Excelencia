@@ -3,10 +3,10 @@
   "name": "a6c33ef9675751737911",
   "position": {
     "x": 255.73700787401575,
-    "y": 40,
+    "y": 39.855118110236219,
     "z": 0,
-    "height": 53.23689320388349,
-    "width": 393.13398058252426,
+    "height": 53.140157480314961,
+    "width": 614.43307086614175,
     "tabOrder": 0
   },
   "visual": {
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "PROGRAMA DE EXCELÊNCIA",
+                    "value": "PROGRAMA DE EXCELÊNCIA (Acesso antecipado)",
                     "textStyle": {
                       "fontSize": "20pt",
                       "color": "#ffffff"
