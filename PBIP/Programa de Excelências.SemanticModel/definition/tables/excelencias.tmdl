@@ -385,6 +385,28 @@ table excelencias
 
 		annotation SummarizationSetBy = Automatic
 
+	column filtra_data_recente = ```
+			
+			
+			VAR max_data = 
+			    CALCULATE(
+			        MAX(excelencias[DT_PROCESSAMENTO]),
+			        ALL(excelencias)
+			    )
+			
+			RETURN
+			    IF(
+			        excelencias[DT_PROCESSAMENTO] = max_data,
+			        1,
+			        0
+			    )
+			```
+		formatString: 0
+		lineageTag: 9bb7cf09-c290-4018-9c45-84e391cd877c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
 	partition excelencias = m
 		mode: import
 		queryGroup: 'Databricks connector'
